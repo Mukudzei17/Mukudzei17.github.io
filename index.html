@@ -1,0 +1,896 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Mukudzei Chauruka, Deal Desk Associate at Wordsmith AI in Edinburgh. Systems he has built to automate security questionnaires, contracts and CRM records: 150 questionnaires completed, about 9,600 answers filled, about 42,000 automated CRM runs.">
+<link rel="canonical" href="https://mukudzei17.github.io/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%230b0d0d'/%3E%3Cpath d='M22 50V30a10 10 0 0 1 20 0v20z' fill='%23c9a35c'/%3E%3Cpath d='M32 22v28M22 38h20' stroke='%230b0d0d' stroke-width='2'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#0b0d0d">
+<meta name="google-site-verification" content="tY0aMJMexNI8p9rMiqCELA5UwMn05S66J1F6yISwsSI">
+<meta property="og:title" content="Mukudzei Chauruka">
+<meta property="og:description" content="Systems built on the deal desk at Wordsmith AI: security questionnaires, contracts and CRM automation.">
+<meta property="og:url" content="https://mukudzei17.github.io/">
+<meta property="og:type" content="profile">
+<meta property="og:image" content="https://mukudzei17.github.io/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Mukudzei Chauruka, over a night skyline of an old town">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Mukudzei Chauruka","jobTitle":"Deal Desk Associate","worksFor":{"@type":"Organization","name":"Wordsmith AI"},"address":{"@type":"PostalAddress","addressLocality":"Edinburgh"},"url":"https://mukudzei17.github.io/","knowsAbout":["Deal desk operations","Security questionnaires","CRM automation","Attio","Contract operations","AI automation"],"sameAs":["https://www.linkedin.com/in/mukudzei-chauruka-106ab4219/"]}</script>
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<script>
+(function () {
+  var me = false;
+  try {
+    if (location.hash === "#me") { localStorage.setItem("pf-me", "1"); history.replaceState(null, "", location.pathname); }
+    if (location.hash === "#not-me") { localStorage.removeItem("pf-me"); history.replaceState(null, "", location.pathname); }
+    me = localStorage.getItem("pf-me") === "1";
+  } catch (e) {}
+  if (me) return;
+  var GC = "mukudzei", TOPIC = "mukudzei-site-ac41e04e01d5", queue = [];
+  function ping(title, body) {
+    if (!TOPIC) return;
+    try { fetch("https://ntfy.sh/" + TOPIC, { method: "POST", body: body, headers: { "Title": title, "Tags": "classical_building" } }).catch(function () {}); } catch (e) {}
+  }
+  if (GC) {
+    window.goatcounter = { no_onload: false };
+    var s = document.createElement("script"); s.async = true; s.src = "https://gc.zgo.at/count.js";
+    s.setAttribute("data-goatcounter", "https://" + GC + ".goatcounter.com/count");
+    s.onload = function () { queue.splice(0).forEach(function (q) { window.goatcounter.count(q); }); };
+    document.head.appendChild(s);
+  }
+  window.__track = function (name, title) {
+    var q = { path: name, title: title, event: true };
+    if (window.goatcounter && window.goatcounter.count) window.goatcounter.count(q); else queue.push(q);
+    if (name === "linkedin") ping("Portfolio visitor clicked your LinkedIn", "They found the contact link.");
+  };
+  try {
+    if (!sessionStorage.getItem("pf-pinged")) {
+      sessionStorage.setItem("pf-pinged", "1");
+      var ref = "a direct link";
+      try { if (document.referrer) { var h = new URL(document.referrer).hostname.replace(/^www\./, ""); if (h && h !== location.hostname) ref = h; } } catch (e) {}
+      var dev = /Mobi|Android|iPhone/i.test(navigator.userAgent) ? "a phone" : "a computer";
+      ping("Someone opened your portfolio", "From " + ref + ", on " + dev + ".");
+    }
+  } catch (e) {}
+})();
+</script>
+</head>
+<body>
+<title>Mukudzei Chauruka · Deal Desk Associate, Wordsmith AI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400..700&family=Schibsted+Grotesk:wght@400;500;600&display=swap">
+<style>
+/* Layout: an old town skyline at night over a ruled register of builds. Twelve brighter windows are the projects.
+   Night (default): near-black, limestone text, one brass accent. Day: pale stone, ink text, darker brass. */
+:root {
+  --paper: #0b0d0d;
+  --surface: #131717;
+  --ink: #ece6da;
+  --strong: #fff8ea;
+  --muted: #9a9e98;
+  --rule: #232a29;
+  --brass: #c9a35c;
+  --live: #94bd9b;
+  --chip-bg: #161b1b;
+  --shot-bg: #060707;
+  --shot-dim: brightness(.84) saturate(.92);
+  --haze: rgb(150 165 170 / .10);
+  --grain: .07;
+  --display: "Bodoni Moda", "Didot", "Bodoni 72", Georgia, serif;
+  --body: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
+  color-scheme: dark;
+}
+:root[data-mode="light"] {
+  --paper: #e9e8e3;
+  --surface: #f4f3ef;
+  --ink: #161a1a;
+  --strong: #0b0d0d;
+  --muted: #5b615e;
+  --rule: #cfcec7;
+  --brass: #86662a;
+  --live: #3d7549;
+  --chip-bg: #dfded7;
+  --shot-bg: #d6d5ce;
+  --shot-dim: none;
+  --haze: rgb(255 255 255 / .55);
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+html, body { overflow-x: clip; }
+body { color: var(--ink); font: 400 16px/1.65 var(--body);
+  background-color: var(--paper);
+  background-image:
+    radial-gradient(1200px 520px at 50% -160px, var(--haze), transparent 75%),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .5  0 0 0 0 .5  0 0 0 0 .45  0 0 0 .07 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  background-repeat: no-repeat, repeat;
+  background-size: auto, 180px 180px;
+  transition: background-color .4s, color .4s; }
+#engraving { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+.wrap { position: relative; z-index: 1; max-width: 1120px; margin: 0 auto; padding-inline: clamp(16px, 4vw, 40px); padding-block: 0 96px; }
+::selection { background: var(--brass); color: var(--paper); }
+a { color: inherit; text-decoration-color: var(--brass); text-underline-offset: 3px; }
+:focus-visible { outline: 1px solid var(--brass); outline-offset: 3px; }
+.row:focus:not(:focus-visible) { outline: none; }
+
+/* Skyline */
+.facade { position: relative; margin-inline: calc(50% - 50vw); }
+.facade canvas { display: block; width: 100%; height: clamp(220px, 30vw, 360px); cursor: default; }
+.facade .tip { position: absolute; pointer-events: none; transform: translate(-50%, -130%); background: var(--surface); border: 1px solid var(--brass); color: var(--ink);
+  font: 500 13px var(--body); padding: 4px 10px; white-space: nowrap; opacity: 0; transition: opacity .15s; }
+.topline { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-top: 10px; }
+.facade-note { margin: 0; font-size: 13px; color: var(--muted); }
+.mode { appearance: none; background: none; border: 1px solid var(--rule); color: var(--muted); font: 500 13px var(--body); padding: 4px 12px; cursor: pointer; white-space: nowrap; transition: color .2s, border-color .2s; }
+.mode:hover { color: var(--ink); border-color: var(--brass); }
+
+/* Header */
+header { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 300px); gap: 32px 64px; align-items: end; padding-block: 36px 34px; }
+h1 { font-family: var(--display); font-weight: 500; font-size: clamp(44px, 7.4vw, 92px); line-height: .92; letter-spacing: -.015em; margin: 0 0 24px; text-wrap: balance; }
+.lede { max-width: 56ch; margin: 0; font-size: 18px; }
+dl.facts { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 7px 18px; font-size: 14px; }
+dl.facts dt { color: var(--muted); }
+dl.facts dd { margin: 0; }
+
+/* The ledger: the headline numbers, ruled like the last line of an account */
+.ledger { list-style: none; margin: 0; padding: 22px 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 20px 28px; border-block: 1px solid var(--brass); }
+.ledger li { display: grid; gap: 6px; align-content: start; }
+.ledger b { font-family: var(--display); font-weight: 500; font-size: clamp(30px, 3.1vw, 40px); white-space: nowrap; line-height: 1; color: var(--strong); font-variant-numeric: lining-nums; }
+.ledger span { font-size: 13.5px; line-height: 1.45; color: var(--muted); }
+
+/* Filters */
+.controls { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 32px; padding-block: 34px 14px; }
+.filters { display: flex; flex-wrap: wrap; gap: 2px 28px; }
+.filter { appearance: none; background: none; border: 0; padding: 4px 0 7px; cursor: pointer; color: var(--muted);
+  font-family: var(--display); font-weight: 500; font-size: clamp(21px, 2.7vw, 31px);
+  border-bottom: 1px solid transparent; transition: color .2s, border-color .2s; }
+.filter .count { font-family: var(--body); font-size: 12.5px; font-weight: 500; margin-left: 6px; vertical-align: .5em; }
+.filter:hover { color: var(--ink); }
+.filter[aria-pressed="true"] { color: var(--ink); border-bottom-color: var(--brass); }
+.sort { display: flex; align-items: center; gap: 10px; color: var(--muted); font-size: 14px; }
+.sort select { font: 500 14px var(--body); color: var(--ink); background: var(--surface); border: 1px solid var(--rule); padding: 6px 10px; border-radius: 0; }
+.blurb { color: var(--muted); margin: 0 0 22px; max-width: 70ch; }
+
+/* Register */
+.register { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
+.item { border-bottom: 1px solid var(--rule); scroll-margin-top: 16px; }
+.row { appearance: none; width: 100%; text-align: left; background: none; border: 0; color: inherit; font: inherit; cursor: pointer;
+  display: grid; grid-template-columns: 7rem minmax(0, 1fr) 12rem 6.5rem 4.5rem; gap: 6px 24px; align-items: baseline; padding: 24px 12px 24px 0; }
+.when { color: var(--muted); font-size: 14px; }
+.title { font-family: var(--display); font-weight: 600; font-size: 23px; line-height: 1.18; display: inline; transition: color .2s, background-size .35s ease;
+  background: linear-gradient(var(--brass), var(--brass)) 0 100% / 0 1px no-repeat; }
+.row:hover .title { color: var(--strong); background-size: 100% 1px; }
+.feature .title { font-size: clamp(28px, 3.6vw, 40px); font-weight: 500; line-height: 1.08; }
+.name { display: block; font-size: 13.5px; font-weight: 500; color: var(--brass); margin-bottom: 4px; }
+.summary { display: block; color: var(--muted); margin-top: 8px; font-size: 15px; max-width: 62ch; }
+.feature .summary { font-size: 17px; color: var(--ink); }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { font-size: 12.5px; padding: 1px 9px; border: 1px solid var(--rule); color: var(--muted); white-space: nowrap; }
+.status { font-size: 13.5px; color: var(--muted); }
+.status.live { color: var(--live); }
+.toggle { justify-self: end; align-self: center; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: var(--muted); white-space: nowrap; }
+.caret { width: 12px; height: 12px; transition: transform .25s; }
+.row:hover .toggle { color: var(--ink); }
+/* An opened build: brass title, brass rule underneath, and a clear end marker */
+.item { transition: background-color .3s, border-color .3s; }
+.item.open { border-bottom: 1px solid var(--brass); }
+.item.open > .row .title { color: var(--brass); background-size: 100% 1px; }
+.item.open > .row .summary { color: var(--ink); }
+.item.open > .row .toggle { color: var(--brass); }
+.item.open > .row .caret { transform: rotate(45deg); }
+.item.just-opened .detail { animation: reveal .45s ease both; }
+@keyframes reveal { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: none; } }
+
+/* Detail */
+.detail { padding: 0 0 36px; margin-left: calc(7rem + 24px); display: grid; gap: 34px; }
+.detail-end { display: flex; align-items: center; gap: 16px; margin-top: 10px; }
+.detail-end::before { content: ""; flex: 1; height: 1px; background: color-mix(in srgb, var(--brass) 55%, transparent); }
+.close-build { appearance: none; background: none; border: 1px solid color-mix(in srgb, var(--brass) 55%, transparent); color: var(--brass);
+  font: 500 13px var(--body); padding: 6px 14px; cursor: pointer; white-space: nowrap; transition: border-color .2s, color .2s; }
+.close-build:hover { border-color: var(--brass); color: var(--strong); }
+.item.open + .item > .row { padding-top: 34px; }
+.cols { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 260px); gap: 30px 56px; }
+.detail h3 { font-family: var(--display); font-weight: 600; font-size: 21px; line-height: 1.25; margin: 0 0 8px; }
+.detail p { margin: 0; max-width: 64ch; }
+.detail p + p { margin-top: 10px; }
+.stack { display: grid; gap: 28px; align-content: start; }
+.steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(var(--n, 4), minmax(0, 1fr)); counter-reset: step; }
+.steps li { position: relative; padding: 12px 18px 4px 0; border-top: 1px solid var(--brass); counter-increment: step; font-size: 14.5px; line-height: 1.55; }
+.steps li::before { content: counter(step); display: block; font-family: var(--display); font-weight: 500; font-size: 26px; line-height: 1; color: var(--brass); margin-bottom: 8px; }
+ul.plain { margin: 0; padding-left: 1.1em; max-width: 64ch; }
+ul.plain li + li { margin-top: 6px; }
+ul.plain li::marker { color: var(--brass); }
+code { font-family: ui-monospace, Menlo, monospace; font-size: .86em; background: var(--chip-bg); padding: 0 4px; }
+.figures { display: grid; gap: 16px; }
+.figure { border-top: 1px solid var(--rule); padding-top: 10px; }
+.figure b { display: block; font-family: var(--display); font-weight: 500; font-size: 40px; line-height: 1; color: var(--strong); font-variant-numeric: lining-nums; }
+.figure span { font-size: 14px; color: var(--muted); }
+.asof { font-size: 13px; color: var(--muted); }
+.note { border-left: 1px solid var(--brass); padding-left: 16px; }
+blockquote { margin: 0; font-family: var(--display); font-weight: 400; font-size: 25px; line-height: 1.3; max-width: 34ch; }
+blockquote footer { font-family: var(--body); font-size: 14px; color: var(--muted); margin-top: 10px; }
+.table-wrap { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 14.5px; }
+th { text-align: left; font-weight: 500; color: var(--muted); font-size: 13px; padding: 0 16px 8px 0; border-bottom: 1px solid var(--brass); }
+td { padding: 11px 16px 11px 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+td.n, th.n { text-align: right; white-space: nowrap; padding-right: 0; }
+td:first-child { font-weight: 500; min-width: 11rem; }
+.tools { display: flex; flex-wrap: wrap; gap: 6px; }
+
+/* Screenshots hang like framed prints: a thin brass mount, dimmed a touch at night so white apps don't glare */
+.shots { display: grid; gap: 30px; }
+.shot { appearance: none; border: 0; background: none; padding: 0; cursor: zoom-in; text-align: left; color: inherit; font: inherit; display: grid; gap: 10px; }
+.shot .frame { background: var(--shot-bg); border: 1px solid color-mix(in srgb, var(--brass) 45%, transparent); padding: 10px; display: block; transition: border-color .2s; }
+.shot img { display: block; width: 100%; height: auto; filter: var(--shot-dim); transition: filter .3s; }
+.shot:hover .frame { border-color: var(--brass); }
+.shot:hover img { filter: none; }
+.shot span.cap { font-size: 14px; color: var(--muted); max-width: 80ch; }
+
+/* Other work: one line each */
+.other { margin-top: 64px; }
+.other h2 { font-family: var(--display); font-weight: 500; font-size: clamp(26px, 3vw, 34px); margin: 0 0 6px; }
+.other > p { color: var(--muted); margin: 0 0 18px; }
+.other ul { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
+.other li { display: grid; grid-template-columns: 7rem minmax(0, 1fr); gap: 6px 24px; padding: 16px 0; border-bottom: 1px solid var(--rule); }
+.other li b { font-family: var(--display); font-weight: 600; font-size: 19px; display: block; margin-bottom: 2px; }
+.other li span.line { color: var(--muted); font-size: 15px; }
+
+dialog { border: 0; padding: 0; background: transparent; max-width: min(1400px, 96vw); }
+dialog::backdrop { background: rgb(6 8 7 / .9); }
+dialog img { display: block; max-width: 100%; max-height: 84vh; margin: 0 auto; }
+dialog .bar { color: #ece6da; font-size: 14px; margin: 12px 0 0; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+dialog button { font: 500 14px var(--body); background: none; color: #ece6da; border: 1px solid #c9a35c; padding: 4px 12px; cursor: pointer; }
+
+.foot { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--rule); color: var(--muted); font-size: 14px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+
+@media (max-width: 900px) {
+  header { grid-template-columns: minmax(0, 1fr); }
+  .ledger { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .row { grid-template-columns: minmax(0, 1fr) auto; gap: 6px 12px; }
+  .row > *:not(.toggle) { grid-column: 1; }
+  .row .toggle { grid-column: 2; grid-row: 1 / span 4; align-self: start; }
+  .detail { margin-left: 0; }
+  .cols { grid-template-columns: minmax(0, 1fr); }
+  .other li { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 640px) {
+  .ledger { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .facade canvas { height: 170px; }
+  .filters { gap: 2px 18px; }
+  .steps { grid-template-columns: minmax(0, 1fr); }
+  .steps li { border-top: 0; border-left: 1px solid var(--brass); padding: 0 0 18px 16px; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+</style>
+
+<canvas id="engraving" aria-hidden="true"></canvas>
+<div class="wrap">
+  <div class="facade" aria-hidden="true">
+    <canvas id="facade"></canvas>
+    <div class="tip" id="tip"></div>
+  </div>
+  <div class="topline">
+    <p class="facade-note">Some windows burn brighter than the rest. Each is one of the builds below, oldest on the left.</p>
+    <button class="mode" type="button" id="mode">Day view</button>
+  </div>
+  <header>
+    <div>
+      <h1>Mukudzei<br>Chauruka</h1>
+      <p class="lede">I work on the deal desk at Wordsmith AI: the stretch of a sale between "yes" and a signed contract. Most of that work used to be done by hand. I automate it, from security questionnaires to contracts to the records behind every deal. These are the systems I've built and what they've done.</p>
+    </div>
+    <dl class="facts">
+      <dt>Role</dt><dd>Deal Desk Associate, Wordsmith AI</dd>
+      <dt>Based</dt><dd>Edinburgh</dd>
+      <dt>Works across</dt><dd>Sales, Legal, Security and Finance</dd>
+      <dt>Builds with</dt><dd>Wordsmith, Attio, Claude, Slack</dd>
+      <dt>Contact</dt><dd><a href="https://www.linkedin.com/in/mukudzei-chauruka-106ab4219/">LinkedIn</a></dd>
+    </dl>
+  </header>
+
+  <ul class="ledger" aria-label="Headline numbers">
+    <li><b>150</b><span>security questionnaires filled in and sent back, 37 of them over 100 questions</span></li>
+    <li><b>500+</b><span>questions in the largest one, answered in a single pass</span></li>
+    <li><b>~9,600</b><span>questionnaire answers filled in this year</span></li>
+    <li><b>~42,000</b><span>automated runs in the company's CRM</span></li>
+    <li><b>665</b><span>contracts checked against their signed copies and reconciled</span></li>
+  </ul>
+
+  <div class="controls">
+    <div class="filters" role="group" aria-label="Filter by area" id="filters"></div>
+    <label class="sort" for="sort">Sort
+      <select id="sort">
+        <option value="featured">Highlights first</option>
+        <option value="new">Newest first</option>
+        <option value="old">Oldest first</option>
+        <option value="az">A to Z</option>
+      </select>
+    </label>
+  </div>
+  <p class="blurb" id="blurb"></p>
+
+  <ol class="register" id="register"><li class="item feature open" id="vsq-assistant">
+      <button class="row" type="button" data-id="vsq-assistant" aria-expanded="true" aria-controls="d-vsq-assistant">
+        <span class="when">Jan 2026</span>
+        <span class="main"><span class="name">VSQ Assistant</span><span class="title">Security questionnaires answered in minutes, not days</span><span class="summary">Large companies won't buy software until their security team's questions are answered. I built the assistant that answers them: single questions in minutes, whole questionnaires of 500-plus questions in one pass.</span></span>
+        <span class="tags"><span class="chip">Security</span><span class="chip">Contracts and deals</span></span>
+        <span class="status live">Live</span>
+        <span class="toggle">Close<svg class="caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 1v10M1 6h10" stroke="currentColor" stroke-width="1.6" fill="none"/></svg></span>
+      </button>
+      <div class="detail" id="d-vsq-assistant"><div class="cols"><div class="stack"><div><h3>The problem</h3><p>Before a large company signs, its security team sends a questionnaire. Where is our data stored? Who can see it? How is it protected? They routinely run to hundreds of questions, and every answer has to be right, because it can end up written into the contract.</p></div><div><h3>What I built</h3><p>An assistant salespeople use in Slack or in the Wordsmith app. It answers only from a library of about 49 security documents, and it names the document behind every answer. I wrote or rewrote the policies in it; the rest is the evidence behind them, like audit reports and certificates, which I collect, check and keep current.</p><p>Paste in a few questions, or drop in the customer's whole questionnaire, and it comes back filled in, often with the supporting documents attached.</p></div><div><h3>How it works</h3><ol class="steps" style="--n:4"><li>A salesperson asks a question or drops in the customer's file.</li><li>The assistant searches the security library for the documents that answer it.</li><li>It writes each answer, cites its source and fills in the file.</li><li>I keep the library current, so every new answer reflects how things are today.</li></ol></div></div><div class="stack"><div><h3>What it has done</h3><div class="figures"><div class="figure"><b>5,300+</b><span>requests answered</span></div><div class="figure"><b>94%</b><span>of questions answered by the assistant in a typical questionnaire</span></div><div class="figure"><b>65</b><span>colleagues have used it, and 55 of them came back</span></div><div class="figure"><b>3x</b><span>monthly users from February to September, 15 to 46</span></div><div class="figure"><b>38</b><span>questionnaires completed in September alone, a record month</span></div></div><p class="asof" style="margin-top:8px">1 January to 6 October 2026, from the platform's own records. The typical figure is the median across 139 questionnaires.</p></div><div><h3>Built with</h3><div class="tools"><span class="chip">Wordsmith</span><span class="chip">Slack</span></div></div></div></div><div class="shots"><button class="shot" type="button" data-src="shots/vsq-assistant/01-the-ten-biggest-questionnaires-it-has-completed-this-year-pulled-from-the-pla.jpg" data-cap="The ten biggest questionnaires it has completed this year, pulled from the platform logs. The largest had more than 500 questions"><span class="frame"><img src="shots/vsq-assistant/01-the-ten-biggest-questionnaires-it-has-completed-this-year-pulled-from-the-pla.jpg" alt="The ten biggest questionnaires it has completed this year, pulled from the platform logs. The largest had more than 500 questions" loading="lazy" decoding="async"></span><span class="cap">The ten biggest questionnaires it has completed this year, pulled from the platform logs. The largest had more than 500 questions</span></button><button class="shot" type="button" data-src="shots/vsq-assistant/02-the-biggest-one-run-in-slack-a-275-question-security-questionnaire-sent-back-.jpg" data-cap="The biggest one run in Slack. A 275-question security questionnaire, sent back with 242 answers filled in"><span class="frame"><img src="shots/vsq-assistant/02-the-biggest-one-run-in-slack-a-275-question-security-questionnaire-sent-back-.jpg" alt="The biggest one run in Slack. A 275-question security questionnaire, sent back with 242 answers filled in" loading="lazy" decoding="async"></span><span class="cap">The biggest one run in Slack. A 275-question security questionnaire, sent back with 242 answers filled in</span></button><button class="shot" type="button" data-src="shots/vsq-assistant/03-a-71-question-questionnaire-comes-back-completed-within-minutes-with-four-sup.jpg" data-cap="A 71-question questionnaire comes back completed within minutes, with four supporting documents and a note of which document backs which answers"><span class="frame"><img src="shots/vsq-assistant/03-a-71-question-questionnaire-comes-back-completed-within-minutes-with-four-sup.jpg" alt="A 71-question questionnaire comes back completed within minutes, with four supporting documents and a note of which document backs which answers" loading="lazy" decoding="async"></span><span class="cap">A 71-question questionnaire comes back completed within minutes, with four supporting documents and a note of which document backs which answers</span></button><button class="shot" type="button" data-src="shots/vsq-assistant/04-a-salesperson-posts-six-security-questions-at-9-13-the-answers-start-arriving.jpg" data-cap="A salesperson posts six security questions at 9.13. The answers start arriving at 9.17"><span class="frame"><img src="shots/vsq-assistant/04-a-salesperson-posts-six-security-questions-at-9-13-the-answers-start-arriving.jpg" alt="A salesperson posts six security questions at 9.13. The answers start arriving at 9.17" loading="lazy" decoding="async"></span><span class="cap">A salesperson posts six security questions at 9.13. The answers start arriving at 9.17</span></button></div><div class="detail-end"><button class="close-build" type="button" data-close="vsq-assistant">Close VSQ Assistant ×</button></div></div>
+    </li><li class="item feature open" id="browser-questionnaire">
+      <button class="row" type="button" data-id="browser-questionnaire" aria-expanded="true" aria-controls="d-browser-questionnaire">
+        <span class="when">Oct 2026</span>
+        <span class="main"><span class="name">Claude in Chrome</span><span class="title">Online security portals answered from the same documents</span><span class="summary">Some customers send their questions through a website instead of a file. A browser assistant reads the portal, checks every answer against my documents and drafts the rest.</span></span>
+        <span class="tags"><span class="chip">Security</span><span class="chip">Contracts and deals</span></span>
+        <span class="status live">Live</span>
+        <span class="toggle">Close<svg class="caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 1v10M1 6h10" stroke="currentColor" stroke-width="1.6" fill="none"/></svg></span>
+      </button>
+      <div class="detail" id="d-browser-questionnaire"><div class="cols"><div class="stack"><div><h3>The problem</h3><p>More and more large customers run their security reviews through online portals instead of spreadsheets. That means hundreds of questions, clicked through one page at a time, with no file to hand to the VSQ Assistant.</p></div><div><h3>How it works</h3><ol class="steps" style="--n:4"><li>The Claude extension for Chrome sits beside the customer's portal.</li><li>It reads each question on screen and checks the answer against the same security library the VSQ Assistant uses.</li><li>Answers the portal pre-fills from earlier submissions get checked too, so nothing goes back out of date.</li><li>It drafts the blanks and lists the few that need the Head of Security. I review everything and submit.</li></ol></div></div><div class="stack"><div><h3>One portal</h3><div class="figures"><div class="figure"><b>317</b><span>questions</span></div><div class="figure"><b>288</b><span>answered so far, 90% of the way through</span></div></div><p class="asof" style="margin-top:8px">One customer portal, October 2026</p></div><div><h3>Built with</h3><div class="tools"><span class="chip">Claude in Chrome</span><span class="chip">Wordsmith</span></div></div></div></div><div class="shots"><button class="shot" type="button" data-src="shots/browser-questionnaire/01-a-317-question-online-security-portal-the-claude-browser-extension-beside-it-.jpg" data-cap="A 317-question online security portal. The Claude browser extension, beside it, checks the answers against my source documents and drafts the blanks"><span class="frame"><img src="shots/browser-questionnaire/01-a-317-question-online-security-portal-the-claude-browser-extension-beside-it-.jpg" alt="A 317-question online security portal. The Claude browser extension, beside it, checks the answers against my source documents and drafts the blanks" loading="lazy" decoding="async"></span><span class="cap">A 317-question online security portal. The Claude browser extension, beside it, checks the answers against my source documents and drafts the blanks</span></button></div><div class="detail-end"><button class="close-build" type="button" data-close="browser-questionnaire">Close Claude in Chrome ×</button></div></div>
+    </li><li class="item feature open" id="order-forms">
+      <button class="row" type="button" data-id="order-forms" aria-expanded="true" aria-controls="d-order-forms">
+        <span class="when">Jun 2026</span>
+        <span class="main"><span class="name">Order form agent</span><span class="title">Contracts drafted from a single link</span><span class="summary">One link in, a ready-to-send contract out. I built the order-form assistant that every new deal at the company now goes through.</span></span>
+        <span class="tags"><span class="chip">Contracts and deals</span><span class="chip">Sales systems</span></span>
+        <span class="status live">Live</span>
+        <span class="toggle">Close<svg class="caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 1v10M1 6h10" stroke="currentColor" stroke-width="1.6" fill="none"/></svg></span>
+      </button>
+      <div class="detail" id="d-order-forms"><div class="cols"><div class="stack"><div><h3>The problem</h3><p>An order form is the contract a customer signs. Each one used to be assembled by hand from a template, one deal at a time, with its progress tracked in people's inboxes.</p></div><div><h3>What I built</h3><p>One standard order form, agreed with legal, and an assistant that fills it in. A salesperson pastes the link to the deal in the CRM, and the assistant copies across the customer's name, address, contact, plan and price, then lists anything it still needs. Typing "sent" logs the form, so legal can follow every negotiation from the first draft.</p></div><div><h3>How a salesperson uses it</h3><ol class="steps" style="--n:5"><li>Move the deal to the contracting stage. A contract record is created automatically.</li><li>Type in the agreed terms once.</li><li>Paste the link to the assistant and get the draft back.</li><li>Send it to the customer and type "sent" so it's tracked.</li><li>Once it's signed, mark the contract active.</li></ol></div></div><div class="stack"><div><h3>What it has done</h3><div class="figures"><div class="figure"><b>~90</b><span>order forms requested in its first two months</span></div><div class="figure"><b>23</b><span>salespeople using it</span></div></div><p class="asof" style="margin-top:8px">2 June to 30 July 2026, counted in its Slack channel. From 2 June it became the standard way every new deal gets its order form, and in August it moved into the company-wide Wordsmith assistant.</p></div><div><h3>Built with</h3><div class="tools"><span class="chip">Wordsmith</span><span class="chip">Attio</span><span class="chip">Slack</span><span class="chip">Linear</span></div></div></div></div><div class="shots"><button class="shot" type="button" data-src="shots/order-forms/01-the-rollout-message-to-the-whole-sales-team-2-june-2026.jpg" data-cap="The rollout message to the whole sales team, 2 June 2026"><span class="frame"><img src="shots/order-forms/01-the-rollout-message-to-the-whole-sales-team-2-june-2026.jpg" alt="The rollout message to the whole sales team, 2 June 2026" loading="lazy" decoding="async"></span><span class="cap">The rollout message to the whole sales team, 2 June 2026</span></button><button class="shot" type="button" data-src="shots/order-forms/02-a-salesperson-pastes-a-deal-link-the-assistant-fills-in-nine-details-and-list.jpg" data-cap="A salesperson pastes a deal link. The assistant fills in nine details and lists what it still needs"><span class="frame"><img src="shots/order-forms/02-a-salesperson-pastes-a-deal-link-the-assistant-fills-in-nine-details-and-list.jpg" alt="A salesperson pastes a deal link. The assistant fills in nine details and lists what it still needs" loading="lazy" decoding="async"></span><span class="cap">A salesperson pastes a deal link. The assistant fills in nine details and lists what it still needs</span></button></div><div class="detail-end"><button class="close-build" type="button" data-close="order-forms">Close Order form agent ×</button></div></div>
+    </li><li class="item feature open" id="attio-workflows">
+      <button class="row" type="button" data-id="attio-workflows" aria-expanded="true" aria-controls="d-attio-workflows">
+        <span class="when">Since Feb 2026</span>
+        <span class="main"><span class="name">Attio automations</span><span class="title">A CRM that does its own follow-up</span><span class="summary">29 automations in the company's CRM that do the follow-up work every time a deal moves: announcing wins, setting up renewals, checking records are complete.</span></span>
+        <span class="tags"><span class="chip">Sales systems</span></span>
+        <span class="status live">Live</span>
+        <span class="toggle">Close<svg class="caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 1v10M1 6h10" stroke="currentColor" stroke-width="1.6" fill="none"/></svg></span>
+      </button>
+      <div class="detail" id="d-attio-workflows"><div class="cols"><div class="stack"><div><h3>The idea</h3><p>A CRM is only as good as what's in it, and keeping it complete normally depends on people remembering extra steps after every deal. I moved those steps into the system itself, so they happen the moment a deal changes.</p></div><div><h3>The automations running today</h3><div class="table-wrap"><table><thead><tr><th>Automation</th><th>What it does, in plain terms</th><th class="n">Times run</th></tr></thead><tbody><tr><td>Deal lost or closed</td><td>Tells the sales leads in Slack.</td><td class="n">8,960</td></tr><tr><td>Deal won</td><td>Checks the deal was approved. If it was, announces the win and updates the record. If not, routes it to the team that checks deals.</td><td class="n">8,911</td></tr><tr><td>Required details</td><td>Each time a deal changes, checks the required details are filled in, fixes what it can and reports the rest.</td><td class="n">6,562</td></tr><tr><td>Renewal set-up</td><td>When a new customer signs, creates next year's renewal straight away, and never creates the same one twice.</td><td class="n">5,014</td></tr><tr><td>Renewal value</td><td>Works out how much a renewal has grown whenever its numbers change.</td><td class="n">2,122</td></tr><tr><td>Won-deal summary</td><td>Posts the details of each win to a channel.</td><td class="n">500</td></tr><tr><td>Close date</td><td>Keeps each deal's expected closing date current.</td><td class="n">223</td></tr><tr><td>Seat count</td><td>Copies the number of paid users from the contract onto the deal.</td><td class="n">215</td></tr><tr><td>Renewal health</td><td>Raises an alert when a renewal is marked at risk.</td><td class="n">82</td></tr></tbody></table></div><p class="asof" style="margin-top:8px">Plus four smaller automations. Counts as of 6 October 2026. A run is each time an automation checks a change.</p></div></div><div class="stack"><div><h3>What it has done</h3><div class="figures"><div class="figure"><b>29</b><span>automations built</span></div><div class="figure"><b>13</b><span>running today</span></div><div class="figure"><b>~42,000</b><span>runs so far</span></div></div><p class="asof" style="margin-top:8px">As of 6 October 2026</p></div><div><h3>Built with</h3><div class="tools"><span class="chip">Attio</span><span class="chip">Slack</span></div></div></div></div><div class="shots"><button class="shot" type="button" data-src="shots/attio-workflows/00-the-workflow-list-filtered-to-ones-i-created-every-one-of-these-is-live.jpg" data-cap="The workflow list, filtered to ones I created. Every one of these is live"><span class="frame"><img src="shots/attio-workflows/00-the-workflow-list-filtered-to-ones-i-created-every-one-of-these-is-live.jpg" alt="The workflow list, filtered to ones I created. Every one of these is live" loading="lazy" decoding="async"></span><span class="cap">The workflow list, filtered to ones I created. Every one of these is live</span></button><button class="shot" type="button" data-src="shots/attio-workflows/01-the-deal-won-rule-it-checks-for-approval-then-announces-the-win-or-flags-it-f.jpg" data-cap="The deal-won rule. It checks for approval, then announces the win or flags it for review"><span class="frame"><img src="shots/attio-workflows/01-the-deal-won-rule-it-checks-for-approval-then-announces-the-win-or-flags-it-f.jpg" alt="The deal-won rule. It checks for approval, then announces the win or flags it for review" loading="lazy" decoding="async"></span><span class="cap">The deal-won rule. It checks for approval, then announces the win or flags it for review</span></button></div><div class="detail-end"><button class="close-build" type="button" data-close="attio-workflows">Close Attio automations ×</button></div></div>
+    </li><li class="item open" id="contract-book">
+      <button class="row" type="button" data-id="contract-book" aria-expanded="true" aria-controls="d-contract-book">
+        <span class="when">Oct 2026</span>
+        <span class="main"><span class="name">Contract book</span><span class="title">Every contract reconciled against its signed copy</span><span class="summary">I rebuilt the company's contract book, the spreadsheet leadership uses for revenue, so every figure traces back to a signed contract and every future update follows the same rules.</span></span>
+        <span class="tags"><span class="chip">Contracts and deals</span><span class="chip">Sales systems</span></span>
+        <span class="status">Done</span>
+        <span class="toggle">Close<svg class="caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 1v10M1 6h10" stroke="currentColor" stroke-width="1.6" fill="none"/></svg></span>
+      </button>
+      <div class="detail" id="d-contract-book"><div class="cols"><div class="stack"><div><h3>The idea</h3><p>A contract book is only trusted if every number in it can be traced to a signed document. I wanted ours to be exactly that, and to stay that way as new contracts land each month.</p></div><div><h3>What I did</h3><ul class="plain"><li>Read every contract against its signed PDF, and cross-checked it with the previous version of the book and the CRM. New contracts are booked straight from the signed copy.</li><li>Flagged the handful without a clean signed copy for follow-up, so nothing in the book rests on an assumption.</li><li>Logged every change with its old and new value, so any figure can be traced.</li><li>Fixed the date logic so totals move only when someone updates the book, not every day the file is opened.</li><li>Wrote a rulebook, with a real example for each rule, so the next update is done exactly the same way.</li></ul></div></div><div class="stack"><div><h3>What it has done</h3><div class="figures"><div class="figure"><b>665</b><span>contracts checked against their signed PDFs</span></div><div class="figure"><b>3</b><span>sources reconciled for each one</span></div></div><p class="asof" style="margin-top:8px">October 2026</p></div><div><h3>The rules, now written down</h3><ul class="plain"><li>The signed contract is always the source of truth.</li><li>One exchange rate per currency, used everywhere.</li><li>A contract counts from the day it's signed.</li><li>New customers belong to the salesperson who won them, renewals to the account manager.</li></ul></div><div><h3>Built with</h3><div class="tools"><span class="chip">Google Sheets</span><span class="chip">Attio</span><span class="chip">Claude</span></div></div></div></div><div class="shots"><button class="shot" type="button" data-src="shots/contract-book/01-the-house-rules-tab-so-every-future-update-follows-the-same-standard.jpg" data-cap="The house rules tab, so every future update follows the same standard"><span class="frame"><img src="shots/contract-book/01-the-house-rules-tab-so-every-future-update-follows-the-same-standard.jpg" alt="The house rules tab, so every future update follows the same standard" loading="lazy" decoding="async"></span><span class="cap">The house rules tab, so every future update follows the same standard</span></button></div><div class="detail-end"><button class="close-build" type="button" data-close="contract-book">Close Contract book ×</button></div></div>
+    </li><li class="item open" id="drafting-agent">
+      <button class="row" type="button" data-id="drafting-agent" aria-expanded="true" aria-controls="d-drafting-agent">
+        <span class="when">Sep 2026</span>
+        <span class="main"><span class="name">Drafting assistant</span><span class="title">Researched first drafts, with sources</span><span class="summary">For every request I approve, it researches the answer, checks it line by line against the source documents and writes a draft that shows where every claim comes from.</span></span>
+        <span class="tags"><span class="chip">Contracts and deals</span><span class="chip">Security</span></span>
+        <span class="status live">Live</span>
+        <span class="toggle">Close<svg class="caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 1v10M1 6h10" stroke="currentColor" stroke-width="1.6" fill="none"/></svg></span>
+      </button>
+      <div class="detail" id="d-drafting-agent"><div class="cols"><div class="stack"><div><h3>How it works</h3><ol class="steps" style="--n:4"><li>It picks up requests I've approved.</li><li>It finds the current version of the right policy, using the library index.</li><li>It checks every line of the draft against the source and writes a reply with citations, a confidence level and any open questions.</li><li>It never sends anything. I check the draft and send it myself.</li></ol></div></div><div class="stack"><div><h3>What it catches</h3><div class="figures"><div class="figure"><b>71</b><span>answers checked in one questionnaire, every one against its source</span></div><div class="figure"><b>13</b><span>flagged for me to tighten before it went out</span></div></div><p class="asof" style="margin-top:8px">One questionnaire, 29 September 2026</p></div><div><h3>Rules it follows</h3><ul class="plain"><li>Read the whole policy, not just the headings.</li><li>Never say something isn't covered without checking every document.</li><li>Quote the exact clause and figure.</li><li>If unsure, say so.</li></ul></div><div><h3>Built with</h3><div class="tools"><span class="chip">Claude Code</span><span class="chip">Google Drive</span></div></div></div></div><div class="detail-end"><button class="close-build" type="button" data-close="drafting-agent">Close Drafting assistant ×</button></div></div>
+    </li><li class="item open" id="contracting-sentinel">
+      <button class="row" type="button" data-id="contracting-sentinel" aria-expanded="true" aria-controls="d-contracting-sentinel">
+        <span class="when">Jul 2026</span>
+        <span class="main"><span class="name">Contracting-Gap Sentinel</span><span class="title">A Monday-morning check that every deal's paperwork is complete</span><span class="summary">Every Monday at 8am it checks that every won deal has its signed contract on file, and puts anything outstanding in front of me before the sales operations meeting.</span></span>
+        <span class="tags"><span class="chip">Sales systems</span><span class="chip">Contracts and deals</span></span>
+        <span class="status live">Weekly</span>
+        <span class="toggle">Close<svg class="caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 1v10M1 6h10" stroke="currentColor" stroke-width="1.6" fill="none"/></svg></span>
+      </button>
+      <div class="detail" id="d-contracting-sentinel"><div class="cols"><div class="stack"><div><h3>The idea</h3><p>Between a deal being won and its contract being filed, things can sit waiting on a signature or an upload. A weekly check means nothing waits unnoticed.</p></div><div><h3>How it works</h3><ol class="steps" style="--n:4"><li>Every Monday at 8am, it reads every deal and contract in the CRM.</li><li>It lists anything outstanding, most urgent first.</li><li>The list lands in my Slack before the weekly sales operations meeting.</li><li>Each week is saved, so the trend over time is visible.</li></ol></div></div><div class="stack"><div><h3>What it has done</h3><div class="figures"><div class="figure"><b>14</b><span>items raised on its first run</span></div><div class="figure"><b>14</b><span>of them closed by October</span></div></div><p class="asof" style="margin-top:8px">First run 6 July, follow-up 5 October 2026</p></div><div><h3>Built with</h3><div class="tools"><span class="chip">Claude Code</span><span class="chip">Attio</span><span class="chip">Slack</span></div></div></div></div><div class="detail-end"><button class="close-build" type="button" data-close="contracting-sentinel">Close Contracting-Gap Sentinel ×</button></div></div>
+    </li><li class="item open" id="deal-desk-queue">
+      <button class="row" type="button" data-id="deal-desk-queue" aria-expanded="true" aria-controls="d-deal-desk-queue">
+        <span class="when">Sep 2026</span>
+        <span class="main"><span class="name">Deal Desk Queue</span><span class="title">One place to file and track every request</span><span class="summary">A page where salespeople ask for security reviews and contracts and see where their request stands, fed automatically from chat, email and task lists.</span></span>
+        <span class="tags"><span class="chip">Contracts and deals</span></span>
+        <span class="status live">Live</span>
+        <span class="toggle">Close<svg class="caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 1v10M1 6h10" stroke="currentColor" stroke-width="1.6" fill="none"/></svg></span>
+      </button>
+      <div class="detail" id="d-deal-desk-queue"><div class="cols"><div class="stack"><div><h3>The idea</h3><p>Requests arrive through chat, email and task lists. I wanted one place that captured all of them and answered "where's mine?" without anyone having to ask.</p></div><div><h3>How it works</h3><ol class="steps" style="--n:4"><li>A salesperson files a request on the page.</li><li>Every hour, an assistant checks Slack, email and task lists for any request that came in another way.</li><li>I approve what goes on the list, and can close anything settled in conversation.</li><li>Everyone sees live counts. Customer names and documents are visible to me only.</li></ol></div></div><div class="stack"><div><h3>At launch</h3><div class="figures"><div class="figure"><b>37</b><span>customer requests captured</span></div><div class="figure"><b>15</b><span>of them security reviews</span></div><div class="figure"><b>12</b><span>contracts and data agreements</span></div></div><p class="asof" style="margin-top:8px">29 September 2026</p></div><div><h3>Built with</h3><div class="tools"><span class="chip">Claude Code</span><span class="chip">Slack</span><span class="chip">Gmail</span><span class="chip">Wordsmith</span></div></div></div></div><div class="shots"><button class="shot" type="button" data-src="shots/deal-desk-queue/01-the-queue-s-live-counts-customer-names-and-documents-never-appear-on-the-shar.jpg" data-cap="The queue's live counts. Customer names and documents never appear on the shared view"><span class="frame"><img src="shots/deal-desk-queue/01-the-queue-s-live-counts-customer-names-and-documents-never-appear-on-the-shar.jpg" alt="The queue's live counts. Customer names and documents never appear on the shared view" loading="lazy" decoding="async"></span><span class="cap">The queue's live counts. Customer names and documents never appear on the shared view</span></button></div><div class="detail-end"><button class="close-build" type="button" data-close="deal-desk-queue">Close Deal Desk Queue ×</button></div></div>
+    </li></ol>
+
+  <section class="other" id="other-work">
+    <h2>Other work</h2>
+    <p>Smaller pieces that support the builds above.</p>
+    <ul id="other"><li id="policy-library"><span class="when">Sep 2026</span><span><b>Policy library</b><span class="line">One index and exactly one current copy of every security policy, so every person and every tool quotes the same version.</span></span></li><li id="policy-refresh"><span class="when">May 2026</span><span><b>16 security policies</b><span class="line">Wrote or rewrote 16 security and compliance policies, from encryption and incident response to business continuity.</span></span></li><li id="mfa-comms"><span class="when">Sep 2026</span><span><b>Two-step login message</b><span class="line">Wrote the company-wide message asking everyone to set up two-step login before the deadline: one action, one date, plain words.</span></span></li></ul>
+  </section>
+
+  <div class="foot" id="page-end">
+    <span>Figures come from the tools' own records and are dated. Customer and colleague details in screenshots are hidden. Visits are counted anonymously, without cookies.</span>
+    <span>Updated 6 October 2026 · <a href="https://www.linkedin.com/in/mukudzei-chauruka-106ab4219/">LinkedIn</a></span>
+  </div>
+</div>
+
+<dialog id="viewer" aria-label="Screenshot">
+  <img id="viewer-img" alt="">
+  <div class="bar"><span id="viewer-cap"></span><button type="button" id="viewer-close">Close</button></div>
+</dialog>
+
+<script>
+const SHOTS = {"attio-workflows": [{"src": "shots/attio-workflows/00-the-workflow-list-filtered-to-ones-i-created-every-one-of-these-is-live.jpg", "caption": "The workflow list, filtered to ones I created. Every one of these is live"}, {"src": "shots/attio-workflows/01-the-deal-won-rule-it-checks-for-approval-then-announces-the-win-or-flags-it-f.jpg", "caption": "The deal-won rule. It checks for approval, then announces the win or flags it for review"}], "browser-questionnaire": [{"src": "shots/browser-questionnaire/01-a-317-question-online-security-portal-the-claude-browser-extension-beside-it-.jpg", "caption": "A 317-question online security portal. The Claude browser extension, beside it, checks the answers against my source documents and drafts the blanks"}], "contract-book": [{"src": "shots/contract-book/01-the-house-rules-tab-so-every-future-update-follows-the-same-standard.jpg", "caption": "The house rules tab, so every future update follows the same standard"}], "deal-desk-queue": [{"src": "shots/deal-desk-queue/01-the-queue-s-live-counts-customer-names-and-documents-never-appear-on-the-shar.jpg", "caption": "The queue's live counts. Customer names and documents never appear on the shared view"}], "order-forms": [{"src": "shots/order-forms/01-the-rollout-message-to-the-whole-sales-team-2-june-2026.jpg", "caption": "The rollout message to the whole sales team, 2 June 2026"}, {"src": "shots/order-forms/02-a-salesperson-pastes-a-deal-link-the-assistant-fills-in-nine-details-and-list.jpg", "caption": "A salesperson pastes a deal link. The assistant fills in nine details and lists what it still needs"}], "vsq-assistant": [{"src": "shots/vsq-assistant/01-the-ten-biggest-questionnaires-it-has-completed-this-year-pulled-from-the-pla.jpg", "caption": "The ten biggest questionnaires it has completed this year, pulled from the platform logs. The largest had more than 500 questions"}, {"src": "shots/vsq-assistant/02-the-biggest-one-run-in-slack-a-275-question-security-questionnaire-sent-back-.jpg", "caption": "The biggest one run in Slack. A 275-question security questionnaire, sent back with 242 answers filled in"}, {"src": "shots/vsq-assistant/03-a-71-question-questionnaire-comes-back-completed-within-minutes-with-four-sup.jpg", "caption": "A 71-question questionnaire comes back completed within minutes, with four supporting documents and a note of which document backs which answers"}, {"src": "shots/vsq-assistant/04-a-salesperson-posts-six-security-questions-at-9-13-the-answers-start-arriving.jpg", "caption": "A salesperson posts six security questions at 9.13. The answers start arriving at 9.17"}]};
+// <render-core>
+const AREAS = {
+  all:       { label: "All", blurb: "Open any build to see the problem it solves, how it works and what it has done." },
+  deals:     { label: "Contracts and deals", blurb: "Getting a customer from yes to a signed contract without the paperwork slowing it down." },
+  systems:   { label: "Sales systems", blurb: "Automations that keep deal, contract and renewal records complete, without anyone having to remember the extra steps." },
+  security:  { label: "Security", blurb: "Answering customers' security questions quickly and correctly, from documents I keep current." }
+};
+
+// Ranked by what a reader should see first: scale and reach, then breadth.
+const PROJECTS = [
+  {
+    id: "vsq-assistant", rank: 1, feature: true, name: "VSQ Assistant", title: "Security questionnaires answered in minutes, not days", areas: ["security", "deals"], date: "2026-01-29", when: "Jan 2026", status: "Live",
+    summary: "Large companies won't buy software until their security team's questions are answered. I built the assistant that answers them: single questions in minutes, whole questionnaires of 500-plus questions in one pass.",
+    main: [
+      { h: "The problem", p: ["Before a large company signs, its security team sends a questionnaire. Where is our data stored? Who can see it? How is it protected? They routinely run to hundreds of questions, and every answer has to be right, because it can end up written into the contract."] },
+      { h: "What I built", p: ["An assistant salespeople use in Slack or in the Wordsmith app. It answers only from a library of about 49 security documents, and it names the document behind every answer. I wrote or rewrote the policies in it; the rest is the evidence behind them, like audit reports and certificates, which I collect, check and keep current.", "Paste in a few questions, or drop in the customer's whole questionnaire, and it comes back filled in, often with the supporting documents attached."] },
+      { h: "How it works", steps: [
+        "A salesperson asks a question or drops in the customer's file.",
+        "The assistant searches the security library for the documents that answer it.",
+        "It writes each answer, cites its source and fills in the file.",
+        "I keep the library current, so every new answer reflects how things are today."
+      ] }
+    ],
+    side: [
+      { h: "What it has done", figures: [["5,300+", "requests answered"], ["94%", "of questions answered by the assistant in a typical questionnaire"], ["65", "colleagues have used it, and 55 of them came back"], ["3x", "monthly users from February to September, 15 to 46"], ["38", "questionnaires completed in September alone, a record month"]], asof: "1 January to 6 October 2026, from the platform's own records. The typical figure is the median across 139 questionnaires." },
+      { tools: ["Wordsmith", "Slack"] }
+    ]
+  },
+  {
+    id: "order-forms", rank: 3, feature: true, name: "Order form agent", title: "Contracts drafted from a single link", areas: ["deals", "systems"], date: "2026-06-02", when: "Jun 2026", status: "Live",
+    summary: "One link in, a ready-to-send contract out. I built the order-form assistant that every new deal at the company now goes through.",
+    main: [
+      { h: "The problem", p: ["An order form is the contract a customer signs. Each one used to be assembled by hand from a template, one deal at a time, with its progress tracked in people's inboxes."] },
+      { h: "What I built", p: ["One standard order form, agreed with legal, and an assistant that fills it in. A salesperson pastes the link to the deal in the CRM, and the assistant copies across the customer's name, address, contact, plan and price, then lists anything it still needs. Typing \"sent\" logs the form, so legal can follow every negotiation from the first draft."] },
+      { h: "How a salesperson uses it", steps: [
+        "Move the deal to the contracting stage. A contract record is created automatically.",
+        "Type in the agreed terms once.",
+        "Paste the link to the assistant and get the draft back.",
+        "Send it to the customer and type \"sent\" so it's tracked.",
+        "Once it's signed, mark the contract active."
+      ] }
+    ],
+    side: [
+      { h: "What it has done", figures: [["~90", "order forms requested in its first two months"], ["23", "salespeople using it"]], asof: "2 June to 30 July 2026, counted in its Slack channel. From 2 June it became the standard way every new deal gets its order form, and in August it moved into the company-wide Wordsmith assistant." },
+      { tools: ["Wordsmith", "Attio", "Slack", "Linear"] }
+    ]
+  },
+  {
+    id: "attio-workflows", rank: 4, feature: true, name: "Attio automations", title: "A CRM that does its own follow-up", areas: ["systems"], date: "2026-02-11", when: "Since Feb 2026", status: "Live",
+    summary: "29 automations in the company's CRM that do the follow-up work every time a deal moves: announcing wins, setting up renewals, checking records are complete.",
+    main: [
+      { h: "The idea", p: ["A CRM is only as good as what's in it, and keeping it complete normally depends on people remembering extra steps after every deal. I moved those steps into the system itself, so they happen the moment a deal changes."] },
+      { h: "The automations running today", table: {
+        head: ["Automation", "What it does, in plain terms", "Times run"],
+        rows: [
+          ["Deal lost or closed", "Tells the sales leads in Slack.", "8,960"],
+          ["Deal won", "Checks the deal was approved. If it was, announces the win and updates the record. If not, routes it to the team that checks deals.", "8,911"],
+          ["Required details", "Each time a deal changes, checks the required details are filled in, fixes what it can and reports the rest.", "6,562"],
+          ["Renewal set-up", "When a new customer signs, creates next year's renewal straight away, and never creates the same one twice.", "5,014"],
+          ["Renewal value", "Works out how much a renewal has grown whenever its numbers change.", "2,122"],
+          ["Won-deal summary", "Posts the details of each win to a channel.", "500"],
+          ["Close date", "Keeps each deal's expected closing date current.", "223"],
+          ["Seat count", "Copies the number of paid users from the contract onto the deal.", "215"],
+          ["Renewal health", "Raises an alert when a renewal is marked at risk.", "82"]
+        ]
+      }, note: "Plus four smaller automations. Counts as of 6 October 2026. A run is each time an automation checks a change." }
+    ],
+    side: [
+      { h: "What it has done", figures: [["29", "automations built"], ["13", "running today"], ["~42,000", "runs so far"]], asof: "As of 6 October 2026" },
+      { tools: ["Attio", "Slack"] }
+    ]
+  },
+  {
+    id: "browser-questionnaire", rank: 2, feature: true, name: "Claude in Chrome", title: "Online security portals answered from the same documents", areas: ["security", "deals"], date: "2026-10-06", when: "Oct 2026", status: "Live",
+    summary: "Some customers send their questions through a website instead of a file. A browser assistant reads the portal, checks every answer against my documents and drafts the rest.",
+    main: [
+      { h: "The problem", p: ["More and more large customers run their security reviews through online portals instead of spreadsheets. That means hundreds of questions, clicked through one page at a time, with no file to hand to the VSQ Assistant."] },
+      { h: "How it works", steps: [
+        "The Claude extension for Chrome sits beside the customer's portal.",
+        "It reads each question on screen and checks the answer against the same security library the VSQ Assistant uses.",
+        "Answers the portal pre-fills from earlier submissions get checked too, so nothing goes back out of date.",
+        "It drafts the blanks and lists the few that need the Head of Security. I review everything and submit."
+      ] }
+    ],
+    side: [
+      { h: "One portal", figures: [["317", "questions"], ["288", "answered so far, 90% of the way through"]], asof: "One customer portal, October 2026" },
+      { tools: ["Claude in Chrome", "Wordsmith"] }
+    ]
+  },
+  {
+    id: "contract-book", rank: 5, name: "Contract book", title: "Every contract reconciled against its signed copy", areas: ["deals", "systems"], date: "2026-10-04", when: "Oct 2026", status: "Done",
+    summary: "I rebuilt the company's contract book, the spreadsheet leadership uses for revenue, so every figure traces back to a signed contract and every future update follows the same rules.",
+    main: [
+      { h: "The idea", p: ["A contract book is only trusted if every number in it can be traced to a signed document. I wanted ours to be exactly that, and to stay that way as new contracts land each month."] },
+      { h: "What I did", list: [
+        "Read every contract against its signed PDF, and cross-checked it with the previous version of the book and the CRM. New contracts are booked straight from the signed copy.",
+        "Flagged the handful without a clean signed copy for follow-up, so nothing in the book rests on an assumption.",
+        "Logged every change with its old and new value, so any figure can be traced.",
+        "Fixed the date logic so totals move only when someone updates the book, not every day the file is opened.",
+        "Wrote a rulebook, with a real example for each rule, so the next update is done exactly the same way."
+      ] }
+    ],
+    side: [
+      { h: "What it has done", figures: [["665", "contracts checked against their signed PDFs"], ["3", "sources reconciled for each one"]], asof: "October 2026" },
+      { h: "The rules, now written down", list: ["The signed contract is always the source of truth.", "One exchange rate per currency, used everywhere.", "A contract counts from the day it's signed.", "New customers belong to the salesperson who won them, renewals to the account manager."] },
+      { tools: ["Google Sheets", "Attio", "Claude"] }
+    ]
+  },
+  {
+    id: "drafting-agent", rank: 6, name: "Drafting assistant", title: "Researched first drafts, with sources", areas: ["deals", "security"], date: "2026-09-30", when: "Sep 2026", status: "Live",
+    summary: "For every request I approve, it researches the answer, checks it line by line against the source documents and writes a draft that shows where every claim comes from.",
+    main: [
+      { h: "How it works", steps: [
+        "It picks up requests I've approved.",
+        "It finds the current version of the right policy, using the library index.",
+        "It checks every line of the draft against the source and writes a reply with citations, a confidence level and any open questions.",
+        "It never sends anything. I check the draft and send it myself."
+      ] }
+    ],
+    side: [
+      { h: "What it catches", figures: [["71", "answers checked in one questionnaire, every one against its source"], ["13", "flagged for me to tighten before it went out"]], asof: "One questionnaire, 29 September 2026" },
+      { h: "Rules it follows", list: ["Read the whole policy, not just the headings.", "Never say something isn't covered without checking every document.", "Quote the exact clause and figure.", "If unsure, say so."] },
+      { tools: ["Claude Code", "Google Drive"] }
+    ]
+  },
+  {
+    id: "contracting-sentinel", rank: 7, name: "Contracting-Gap Sentinel", title: "A Monday-morning check that every deal's paperwork is complete", areas: ["systems", "deals"], date: "2026-07-06", when: "Jul 2026", status: "Weekly",
+    summary: "Every Monday at 8am it checks that every won deal has its signed contract on file, and puts anything outstanding in front of me before the sales operations meeting.",
+    main: [
+      { h: "The idea", p: ["Between a deal being won and its contract being filed, things can sit waiting on a signature or an upload. A weekly check means nothing waits unnoticed."] },
+      { h: "How it works", steps: [
+        "Every Monday at 8am, it reads every deal and contract in the CRM.",
+        "It lists anything outstanding, most urgent first.",
+        "The list lands in my Slack before the weekly sales operations meeting.",
+        "Each week is saved, so the trend over time is visible."
+      ] }
+    ],
+    side: [
+      { h: "What it has done", figures: [["14", "items raised on its first run"], ["14", "of them closed by October"]], asof: "First run 6 July, follow-up 5 October 2026" },
+      { tools: ["Claude Code", "Attio", "Slack"] }
+    ]
+  },
+  {
+    id: "deal-desk-queue", rank: 8, name: "Deal Desk Queue", title: "One place to file and track every request", areas: ["deals"], date: "2026-09-29", when: "Sep 2026", status: "Live",
+    summary: "A page where salespeople ask for security reviews and contracts and see where their request stands, fed automatically from chat, email and task lists.",
+    main: [
+      { h: "The idea", p: ["Requests arrive through chat, email and task lists. I wanted one place that captured all of them and answered \"where's mine?\" without anyone having to ask."] },
+      { h: "How it works", steps: [
+        "A salesperson files a request on the page.",
+        "Every hour, an assistant checks Slack, email and task lists for any request that came in another way.",
+        "I approve what goes on the list, and can close anything settled in conversation.",
+        "Everyone sees live counts. Customer names and documents are visible to me only."
+      ] }
+    ],
+    side: [
+      { h: "At launch", figures: [["37", "customer requests captured"], ["15", "of them security reviews"], ["12", "contracts and data agreements"]], asof: "29 September 2026" },
+      { tools: ["Claude Code", "Slack", "Gmail", "Wordsmith"] }
+    ]
+  }
+];
+
+const OTHER = [
+  { id: "policy-library", title: "Policy library", areas: ["security"], date: "2026-09-24", when: "Sep 2026", line: "One index and exactly one current copy of every security policy, so every person and every tool quotes the same version." },
+  { id: "policy-refresh", title: "16 security policies", areas: ["security"], date: "2026-05-05", when: "May 2026", line: "Wrote or rewrote 16 security and compliance policies, from encryption and incident response to business continuity." },
+  { id: "mfa-comms", title: "Two-step login message", areas: ["security"], date: "2026-09-07", when: "Sep 2026", line: "Wrote the company-wide message asking everyone to set up two-step login before the deadline: one action, one date, plain words." }
+];
+
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+function block(b) {
+  let out = b.h ? `<h3>${b.h}</h3>` : "";
+  if (b.p) out += b.p.map(t => `<p>${t}</p>`).join("");
+  if (b.steps) out += `<ol class="steps" style="--n:${b.steps.length}">${b.steps.map(s => `<li>${s}</li>`).join("")}</ol>`;
+  if (b.list) out += `<ul class="plain">${b.list.map(s => `<li>${s}</li>`).join("")}</ul>`;
+  if (b.table) out += `<div class="table-wrap"><table><thead><tr>${b.table.head.map((h, i) => `<th${i === b.table.head.length - 1 ? ' class="n"' : ""}>${h}</th>`).join("")}</tr></thead><tbody>${
+    b.table.rows.map(r => `<tr>${r.map((c, i) => `<td${i === r.length - 1 ? ' class="n"' : ""}>${c}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
+  if (b.note && typeof b.note === "string") out += `<p class="asof" style="margin-top:8px">${b.note}</p>`;
+  if (b.figures) out += `<div class="figures">${b.figures.map(([n, l]) => `<div class="figure"><b>${n}</b><span>${l}</span></div>`).join("")}</div><p class="asof" style="margin-top:8px">${b.asof}</p>`;
+  if (b.quote) out += `<blockquote>“${b.quote}”<footer>${b.by}</footer></blockquote>`;
+  if (b.tools) out += `<h3>Built with</h3><div class="tools">${b.tools.map(t => `<span class="chip">${t}</span>`).join("")}</div>`;
+  return `<div${b.note === true ? ' class="note"' : ""}>${out}</div>`;
+}
+
+function shotsFor(p) { return [p.id, ...(p.shotsFrom || [])].flatMap(k => SHOTS[k] || []); }
+
+function detail(p) {
+  const shots = shotsFor(p);
+  const gallery = shots.length ? `<div class="shots">${shots.map(s =>
+    `<button class="shot" type="button" data-src="${esc(s.src)}" data-cap="${esc(s.caption)}"><span class="frame"><img src="${esc(s.src)}" alt="${esc(s.caption)}"${s.src.startsWith("data:") ? "" : ' loading="lazy" decoding="async"'}></span><span class="cap">${esc(s.caption)}</span></button>`).join("")}</div>` : "";
+  return `<div class="detail" id="d-${p.id}"><div class="cols"><div class="stack">${p.main.map(block).join("")}</div><div class="stack">${p.side.map(block).join("")}</div></div>${gallery}<div class="detail-end"><button class="close-build" type="button" data-close="${p.id}">Close ${p.name} ×</button></div></div>`;
+}
+
+function rowHTML(p, open) {
+  return `<li class="item${p.feature ? " feature" : ""}${open ? " open" : ""}" id="${p.id}">
+      <button class="row" type="button" data-id="${p.id}" aria-expanded="${open}"${open ? ` aria-controls="d-${p.id}"` : ""}>
+        <span class="when">${p.when}</span>
+        <span class="main"><span class="name">${p.name}</span><span class="title">${p.title}</span><span class="summary">${p.summary}</span></span>
+        <span class="tags">${p.areas.map(a => `<span class="chip">${AREAS[a].label}</span>`).join("")}</span>
+        <span class="status${p.status === "Live" || p.status === "Weekly" ? " live" : ""}">${p.status}</span>
+        <span class="toggle">${open ? "Close" : "Open"}<svg class="caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 1v10M1 6h10" stroke="currentColor" stroke-width="1.6" fill="none"/></svg></span>
+      </button>
+      ${open ? detail(p) : ""}
+    </li>`;
+}
+
+function otherHTML(o) {
+  return `<li id="${o.id}"><span class="when">${o.when}</span><span><b>${o.title}</b><span class="line">${o.line}</span></span></li>`;
+}
+// </render-core>
+
+const $ = (s, el = document) => el.querySelector(s);
+// Visit analytics hook. Only the public site defines window.__track; everywhere else this does nothing.
+const track = (name, title) => { try { window.__track && window.__track(name, title || name); } catch (e) {} };
+const state = { area: "all", sort: "featured", open: new Set() };
+
+try { const s = localStorage.getItem("pf-sort"); if (s && $(`#sort option[value="${s}"]`)) state.sort = s; } catch (e) {}
+$("#sort").value = state.sort;
+
+function readHash() {
+  const h = location.hash.slice(1);
+  if (AREAS[h]) state.area = h;
+  else if (PROJECTS.some(p => p.id === h)) { state.area = "all"; state.open.add(h); return h; }
+  else if (OTHER.some(o => o.id === h)) { state.area = "all"; return h; }
+  return null;
+}
+
+function renderFilters() {
+  const c = { all: PROJECTS.length + OTHER.length };
+  [...PROJECTS, ...OTHER].forEach(p => p.areas.forEach(a => c[a] = (c[a] || 0) + 1));
+  $("#filters").innerHTML = Object.entries(AREAS).map(([k, a]) =>
+    `<button class="filter" type="button" data-area="${k}" aria-pressed="${state.area === k}">${a.label}<span class="count">${c[k] || 0}</span></button>`).join("");
+  $("#blurb").textContent = AREAS[state.area].blurb;
+}
+
+function sorted(list) {
+  const by = { featured: (a, b) => (a.rank || 99) - (b.rank || 99), new: (a, b) => b.date.localeCompare(a.date), old: (a, b) => a.date.localeCompare(b.date), az: (a, b) => a.title.localeCompare(b.title) };
+  return [...list].sort(by[state.sort]);
+}
+
+function renderList() {
+  const keep = p => state.area === "all" || p.areas.includes(state.area);
+  $("#register").innerHTML = sorted(PROJECTS.filter(keep)).map(p => rowHTML(p, state.open.has(p.id))).join("");
+  const others = sorted(OTHER.filter(keep));
+  $("#other").innerHTML = others.map(otherHTML).join("");
+  $("#other-work").hidden = others.length === 0;
+}
+
+function render() { renderFilters(); renderList(); }
+function setHash(h) { try { history.replaceState(null, "", h ? "#" + h : location.pathname + location.search); } catch (e) {} }
+
+$("#filters").addEventListener("click", e => {
+  const b = e.target.closest(".filter"); if (!b) return;
+  state.area = b.dataset.area;
+  track("filter/" + state.area);
+  setHash(state.area === "all" ? "" : state.area);
+  render();
+});
+$("#sort").addEventListener("change", e => {
+  state.sort = e.target.value;
+  track("sort/" + state.sort);
+  try { localStorage.setItem("pf-sort", state.sort); } catch (err) {}
+  renderList();
+});
+$("#register").addEventListener("click", e => {
+  const shot = e.target.closest(".shot");
+  if (shot) {
+    $("#viewer-img").src = shot.dataset.src; $("#viewer-img").alt = shot.dataset.cap;
+    $("#viewer-cap").textContent = shot.dataset.cap; $("#viewer").showModal();
+    track("screenshot/" + (shot.closest(".item")?.id || "unknown"), shot.dataset.cap); return;
+  }
+  const closer = e.target.closest(".close-build");
+  if (closer) {
+    const cid = closer.dataset.close; state.open.delete(cid); renderList();
+    const b = $(`[data-id="${cid}"]`); if (e.detail === 0) b.focus({ preventScroll: true }); b.scrollIntoView({ block: "nearest" });
+    track("close/" + cid); return;
+  }
+  const row = e.target.closest(".row"); if (!row) return;
+  const id = row.dataset.id;
+  state.open.has(id) ? state.open.delete(id) : state.open.add(id);
+  const opened = state.open.has(id);
+  if (opened) { setHash(id); track("open/" + id, PROJECTS.find(p => p.id === id)?.title); }
+  renderList();
+  const btn = $(`[data-id="${id}"]`);
+  if (e.detail === 0) btn.focus({ preventScroll: true }); // keyboard only: a mouse click shouldn't leave a focus outline around the header
+  if (opened) { btn.closest(".item").classList.add("just-opened"); btn.scrollIntoView({ block: "nearest", behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" }); }
+});
+$("#viewer-close").addEventListener("click", () => $("#viewer").close());
+$("#viewer").addEventListener("click", e => { if (e.target.id === "viewer") $("#viewer").close(); });
+document.addEventListener("click", e => { const a = e.target.closest('a[href*="linkedin.com"]'); if (a) track("linkedin", "Clicked LinkedIn"); });
+if ("IntersectionObserver" in window) {
+  const seen = new Set();
+  const io = new IntersectionObserver(es => es.forEach(en => {
+    if (!en.isIntersecting || seen.has(en.target.id)) return;
+    seen.add(en.target.id); track("reached/" + en.target.id, "Scrolled to " + en.target.id);
+  }), { threshold: .3 });
+  ["other-work", "page-end"].forEach(id => { const el = document.getElementById(id); if (el) io.observe(el); });
+}
+window.addEventListener("hashchange", () => { const id = readHash(); render(); if (id) document.getElementById(id)?.scrollIntoView(); });
+
+const target = readHash();
+render();
+if (target) {
+  const go = () => document.getElementById(target)?.scrollIntoView();
+  requestAnimationFrame(go); setTimeout(go, 400); window.addEventListener("load", go, { once: true });
+}
+
+// Day and night. Night is the default; a visitor's choice is remembered on their own device.
+const MODE = {
+  night: { far: "#161c1d", rock: "#0e1213", near: "#0c1011", haze: "rgba(120,130,135,.10)", lit: [240, 196, 122], star: "#ffe1a6", glow: [250, 214, 146], line: "rgba(236,230,218,.045)" },
+  day:   { far: "#c3c7c4", rock: "#aab0ad", near: "#a3a9a6", haze: "rgba(255,255,255,.35)", lit: [120, 96, 52], star: "#7a5a1e", glow: [150, 112, 40], line: "rgba(22,26,26,.05)" }
+};
+let mode = "night";
+try { if (localStorage.getItem("pf-mode") === "day") mode = "day"; } catch (e) {}
+const redrawers = [];
+function applyMode() {
+  document.documentElement.dataset.mode = mode === "day" ? "light" : "";
+  if (mode !== "day") delete document.documentElement.dataset.mode;
+  $("#mode").textContent = mode === "day" ? "Night view" : "Day view";
+  $("#mode").setAttribute("aria-label", mode === "day" ? "Switch to night view" : "Switch to day view");
+  redrawers.forEach(f => f());
+}
+$("#mode").addEventListener("click", () => {
+  mode = mode === "day" ? "night" : "day";
+  track("view/" + mode);
+  try { localStorage.setItem("pf-mode", mode); } catch (e) {}
+  applyMode();
+});
+
+// Night skyline of an old town: castle on its rock, spires, tenements, hundreds of small lit windows.
+// One brighter window per build, oldest on the left. The scene is drawn once; only the lights animate,
+// and only while the skyline is on screen and the tab is visible.
+(function skyline() {
+  const cv = document.getElementById("facade"), tip = document.getElementById("tip");
+  if (!cv) return;
+  const ctx = cv.getContext("2d");
+  const still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const byDate = [...PROJECTS, ...OTHER.map(o => ({ ...o, other: true }))].sort((a, b) => a.date.localeCompare(b.date));
+  let W = 0, H = 0, dpr = 1, scene = null, lights = [], projects = [], hover = -1, running = false, onScreen = true;
+  let seed = 1;
+  const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+  const R = (a, b) => a + rnd() * (b - a);
+  const C = () => MODE[mode];
+
+  function building(g, x, w, top, base, fill, litP, row) {
+    g.fillStyle = fill;
+    g.fillRect(x, top, w, base - top);
+    const roof = rnd();
+    if (roof < .35) { g.beginPath(); g.moveTo(x - 1, top); g.lineTo(x + w / 2, top - w * R(.25, .45)); g.lineTo(x + w + 1, top); g.fill(); }
+    else if (roof < .55) { for (let c = x + 3; c < x + w - 4; c += R(9, 16)) g.fillRect(c, top - R(4, 9), 3, 9); }
+    else if (roof < .62 && w > 26) { g.beginPath(); g.moveTo(x + w * .3, top); g.lineTo(x + w * .5, top - R(36, 70)); g.lineTo(x + w * .7, top); g.fill(); }
+    for (let wy = top + 7; wy < base - 6; wy += 9) for (let wx = x + 4; wx < x + w - 4; wx += 7)
+      if (rnd() < litP) lights.push({ x: wx, y: wy, a: R(.35, .9), row, t: R(0, 6.28) });
+  }
+
+  function build() {
+    seed = 20261006; lights = [];
+    const c = C();
+    const off = document.createElement("canvas"); off.width = W * dpr; off.height = H * dpr;
+    const g = off.getContext("2d"); g.setTransform(dpr, 0, 0, dpr, 0, 0);
+    const ground = H - 18;
+    const haze = g.createRadialGradient(W * .5, ground, 10, W * .5, ground, Math.max(W, H) * .7);
+    haze.addColorStop(0, c.haze); haze.addColorStop(1, "rgba(0,0,0,0)");
+    g.fillStyle = haze; g.fillRect(0, 0, W, H);
+    for (let x = -10; x < W; ) { const w = R(22, 64); building(g, x, w, ground - R(H * .32, H * .6), ground, c.far, .05, 0); x += w + R(-4, 3); }
+    const mx = W * .62; g.fillStyle = c.far;
+    g.beginPath(); g.moveTo(mx - 9, ground); g.lineTo(mx - 6, ground - H * .62); g.lineTo(mx, ground - H * .86); g.lineTo(mx + 6, ground - H * .62); g.lineTo(mx + 9, ground); g.fill();
+    const cx0 = W * .04, cx1 = W * .34, rockTop = ground - H * .5;
+    g.fillStyle = c.rock;
+    g.beginPath(); g.moveTo(cx0, ground);
+    g.bezierCurveTo(cx0 + W * .05, ground - H * .15, cx0 + W * .07, rockTop + 6, cx0 + W * .12, rockTop);
+    g.lineTo(cx1 - W * .06, rockTop - 4);
+    g.bezierCurveTo(cx1 - W * .02, rockTop + H * .08, cx1, ground - H * .2, cx1 + W * .03, ground);
+    g.fill();
+    for (let x = cx0 + W * .115; x < cx1 - W * .055; ) {
+      const w = R(14, 34), h = R(14, 34), top = rockTop - h;
+      g.fillRect(x, top, w, h + 6);
+      for (let k = x; k < x + w - 2; k += 5) g.fillRect(k, top - 4, 3, 4);
+      for (let wy = top + 6; wy < rockTop - 3; wy += 8) for (let wx = x + 3; wx < x + w - 3; wx += 6) if (rnd() < .12) lights.push({ x: wx, y: wy, a: R(.4, .9), row: 1, t: R(0, 6.28) });
+      x += w + R(0, 4);
+    }
+    for (let x = cx1 - W * .02; x < W; ) { const w = R(26, 80); building(g, x, w, ground - R(H * .2, H * .42), ground, c.near, .09, 1); x += w + R(-3, 2); }
+    g.fillStyle = c.near; g.fillRect(0, ground, W, H - ground);
+    scene = off;
+    const pool = lights.filter(l => l.row === 1 && l.x > 14 && l.x < W - 14);
+    projects = byDate.map((p, i) => {
+      const target = W * (.05 + .9 * (i + .5) / byDate.length);
+      let best = null;
+      for (const l of pool) if (!l.p && (!best || Math.abs(l.x - target) < Math.abs(best.x - target))) best = l;
+      best.p = p; return best;
+    });
+  }
+
+  function layout() {
+    const r = cv.getBoundingClientRect(); dpr = Math.min(window.devicePixelRatio || 1, 2);
+    W = r.width; H = r.height; cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    build();
+  }
+
+  function frame(now) {
+    const s = now / 1000, c = C();
+    ctx.clearRect(0, 0, W, H);
+    ctx.drawImage(scene, 0, 0, W, H);
+    const [lr, lg, lb] = c.lit;
+    for (const l of lights) {
+      if (l.p) continue;
+      const a = still ? l.a : l.a * (Math.sin(s * .15 + l.t) > -.97 ? 1 : 0);
+      ctx.fillStyle = `rgba(${lr},${lg},${lb},${mode === "day" ? a * .35 : a})`; ctx.fillRect(l.x, l.y, 2, 3);
+    }
+    const [gr, gg, gb] = c.glow;
+    projects.forEach((l, i) => {
+      const big = i === hover, pulse = still ? 1 : .85 + .15 * Math.sin(s * 1.1 + i);
+      const glow = ctx.createRadialGradient(l.x + 1.5, l.y + 2, 0, l.x + 1.5, l.y + 2, big ? 26 : 13);
+      glow.addColorStop(0, `rgba(${gr},${gg},${gb},${(big ? .55 : .32) * pulse})`); glow.addColorStop(1, `rgba(${gr},${gg},${gb},0)`);
+      ctx.fillStyle = glow; ctx.fillRect(l.x - 30, l.y - 30, 64, 64);
+      ctx.fillStyle = c.star; ctx.fillRect(l.x - .5, l.y - .5, 3.5, 4.5);
+    });
+    ctx.globalCompositeOperation = "destination-in";
+    const mist = ctx.createLinearGradient(0, H * .62, 0, H);
+    mist.addColorStop(0, "rgba(0,0,0,1)"); mist.addColorStop(1, "rgba(0,0,0,0)");
+    ctx.fillStyle = mist; ctx.fillRect(0, 0, W, H);
+    ctx.globalCompositeOperation = "source-over";
+  }
+  function loop(now) { if (!running) return; frame(now); requestAnimationFrame(loop); }
+  function start() { if (still || running || !onScreen || document.hidden) return; running = true; requestAnimationFrame(loop); }
+  function stop() { running = false; }
+
+  function at(e) {
+    const r = cv.getBoundingClientRect(), x = e.clientX - r.left, y = e.clientY - r.top;
+    let best = -1, d = 18;
+    projects.forEach((l, i) => { const dd = Math.hypot(l.x - x, l.y - y); if (dd < d) { d = dd; best = i; } });
+    return best;
+  }
+  cv.addEventListener("mousemove", e => {
+    hover = at(e); cv.style.cursor = hover >= 0 ? "pointer" : "default";
+    if (hover >= 0) { const l = projects[hover]; tip.textContent = l.p.title; tip.style.left = Math.min(Math.max(l.x, 120), W - 120) + "px"; tip.style.top = l.y + "px"; tip.style.opacity = 1; }
+    else tip.style.opacity = 0;
+    if (!running) frame(performance.now());
+  });
+  cv.addEventListener("mouseleave", () => { hover = -1; tip.style.opacity = 0; if (!running) frame(performance.now()); });
+  cv.addEventListener("click", e => {
+    const i = at(e); if (i < 0) return;
+    const p = projects[i].p; state.area = "all"; track("skyline/" + p.id, p.title);
+    if (!p.other) state.open.add(p.id);
+    setHash(p.id); render();
+    document.getElementById(p.id)?.scrollIntoView({ behavior: still ? "auto" : "smooth", block: "start" });
+  });
+  if ("IntersectionObserver" in window) new IntersectionObserver(es => { onScreen = es[0].isIntersecting; onScreen ? start() : stop(); }).observe(cv);
+  document.addEventListener("visibilitychange", () => document.hidden ? stop() : start());
+  window.addEventListener("resize", () => { layout(); frame(performance.now()); });
+  redrawers.push(() => { build(); frame(performance.now()); });
+  layout(); frame(performance.now()); start();
+})();
+
+// A faint engraved elevation of a classical building, fixed behind the page like a drawing behind glass.
+(function engraving() {
+  const cv = document.getElementById("engraving"); if (!cv) return;
+  const g = cv.getContext("2d");
+  function paint() {
+    const dpr = Math.min(window.devicePixelRatio || 1, 2), W = innerWidth, H = innerHeight;
+    cv.width = W * dpr; cv.height = H * dpr; g.setTransform(dpr, 0, 0, dpr, 0, 0);
+    g.clearRect(0, 0, W, H);
+    g.strokeStyle = MODE[mode].line; g.lineWidth = 1;
+    const fw = Math.min(W * .92, 1500), x0 = (W - fw) / 2, base = H * .97, top = H * .14;
+    const line = (a, b, c, d) => { g.beginPath(); g.moveTo(a, b); g.lineTo(c, d); g.stroke(); };
+    for (let i = 0; i < 4; i++) line(x0 - i * 14, base - i * 9, x0 + fw + i * 14, base - i * 9);
+    const cols = 8, colW = fw / (cols * 2.6), capY = top + (base - top) * .28, shaftBot = base - 36;
+    for (let c = 0; c < cols; c++) {
+      const cx = x0 + fw * (c + .5) / cols;
+      g.strokeRect(cx - colW / 2, shaftBot - 4, colW, 6);
+      g.strokeRect(cx - colW * .62, capY - 10, colW * 1.24, 10);
+      for (let f = 0; f <= 5; f++) line(cx - colW * .42 + f * colW * .168, capY, cx - colW * .44 + f * colW * .176, shaftBot - 4);
+    }
+    for (let c = 2; c < cols - 3; c++) {
+      const a = x0 + fw * (c + .5) / cols + colW * .7, b = x0 + fw * (c + 1.5) / cols - colW * .7, r = (b - a) / 2;
+      g.beginPath(); g.moveTo(a, shaftBot - 4); g.lineTo(a, capY + r + 30); g.arc(a + r, capY + r + 30, r, Math.PI, 0); g.lineTo(b, shaftBot - 4); g.stroke();
+    }
+    for (const dy of [0, 12, 30, 40]) line(x0 - 20, capY - 10 - dy, x0 + fw + 20, capY - 10 - dy);
+    for (let x = x0 - 10; x < x0 + fw + 10; x += 22) g.strokeRect(x, capY - 40, 8, 8);
+    const py = capY - 50;
+    g.beginPath(); g.moveTo(x0 - 30, py); g.lineTo(x0 + fw / 2, top - 30); g.lineTo(x0 + fw + 30, py); g.closePath(); g.stroke();
+    g.beginPath(); g.moveTo(x0 + 30, py - 8); g.lineTo(x0 + fw / 2, top - 8); g.lineTo(x0 + fw - 30, py - 8); g.stroke();
+  }
+  addEventListener("resize", paint);
+  redrawers.push(paint);
+})();
+
+applyMode();
+</script>
+
+</body>
+</html>
