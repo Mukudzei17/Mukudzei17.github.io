@@ -140,6 +140,14 @@ dl.facts dd { margin: 0; }
 .ledger b { font-family: var(--display); font-weight: 500; font-size: clamp(30px, 3.1vw, 40px); white-space: nowrap; line-height: 1; color: var(--strong); font-variant-numeric: lining-nums; }
 .ledger span { font-size: 13.5px; line-height: 1.45; color: var(--muted); }
 
+/* How I build */
+.how { display: grid; grid-template-columns: minmax(0, 300px) minmax(0, 1fr); gap: 16px 64px; padding-block: 34px 6px; }
+.how h2 { font-family: var(--display); font-weight: 500; font-size: clamp(26px, 3vw, 34px); line-height: 1.1; margin: 0; }
+.how p { margin: 0 0 14px; font-size: 17px; max-width: 60ch; }
+.how ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 32px; }
+.how li { font-size: 15px; color: var(--muted); border-top: 1px solid var(--rule); padding-top: 10px; }
+.how li b { display: block; color: var(--ink); font-weight: 600; margin-bottom: 2px; }
+
 /* Filters */
 .controls { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 32px; padding-block: 34px 14px; }
 .filters { display: flex; flex-wrap: wrap; gap: 2px 28px; }
@@ -248,6 +256,7 @@ dialog button { font: 500 14px var(--body); background: none; color: #ece6da; bo
 @media (max-width: 900px) {
   header { grid-template-columns: minmax(0, 1fr); }
   .ledger { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .how { grid-template-columns: minmax(0, 1fr); }
   .row { grid-template-columns: minmax(0, 1fr) auto; gap: 6px 12px; }
   .row > *:not(.toggle) { grid-column: 1; }
   .row .toggle { grid-column: 2; grid-row: 1 / span 4; align-self: start; }
@@ -257,6 +266,7 @@ dialog button { font: 500 14px var(--body); background: none; color: #ece6da; bo
 }
 @media (max-width: 640px) {
   .ledger { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .how ul { grid-template-columns: minmax(0, 1fr); }
   .facade canvas { height: 170px; }
   .filters { gap: 2px 18px; }
   .steps { grid-template-columns: minmax(0, 1fr); }
@@ -296,6 +306,19 @@ dialog button { font: 500 14px var(--body); background: none; color: #ece6da; bo
     <li><b>~42,000</b><span>automated runs in the company's CRM</span></li>
     <li><b>665</b><span>contracts checked against their signed copies and reconciled</span></li>
   </ul>
+
+  <section class="how" aria-labelledby="how-h">
+    <h2 id="how-h">How I build</h2>
+    <div>
+      <p>I don't write code. I build by directing AI: deciding exactly what the finished thing has to do, then working with the tools until it does.</p>
+      <ul>
+        <li><b>I start from the end result.</b> Before anything is built I know what a good answer, a good order form or a clean record looks like, so I can judge every draft against it.</li>
+        <li><b>I know when to push and when to stop.</b> If an answer is vague or wrong, I send it back with a sharper brief or a different approach. When it meets the bar, I ship it.</li>
+        <li><b>I keep a person in the loop where it matters.</b> Every build answers from checked sources, says where it got its answer, and hands anything uncertain to me.</li>
+        <li><b>I prove it with real numbers.</b> Every figure on this page comes from the tools' own records, not estimates.</li>
+      </ul>
+    </div>
+  </section>
 
   <div class="controls">
     <div class="filters" role="group" aria-label="Filter by area" id="filters"></div>
