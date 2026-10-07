@@ -322,7 +322,7 @@ dialog button { font: 500 14px var(--body); background: none; color: #ece6da; bo
     </li><li class="item feature open" id="browser-questionnaire">
       <button class="row" type="button" data-id="browser-questionnaire" aria-expanded="true" aria-controls="d-browser-questionnaire">
         <span class="when">Oct 2026</span>
-        <span class="main"><span class="name">Claude in Chrome</span><span class="title">Online security portals answered from the same documents</span><span class="summary">Some customers send their questions through a website instead of a file. A browser assistant reads the portal, checks every answer against my documents and drafts the rest.</span></span>
+        <span class="main"><span class="name">Claude in Chrome</span><span class="title">Online security portals answered from the same documents</span><span class="summary">Some customers send their questions through a website instead of a file. A browser assistant works through the portal, answers everything my documents support and hands the rest to me.</span></span>
         <span class="tags"><span class="chip">Security</span><span class="chip">Contracts and deals</span></span>
         <span class="status live">Live</span>
         <span class="toggle">Close<svg class="caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 1v10M1 6h10" stroke="currentColor" stroke-width="1.6" fill="none"/></svg></span>
@@ -340,7 +340,7 @@ dialog button { font: 500 14px var(--body); background: none; color: #ece6da; bo
     </li><li class="item feature open" id="attio-workflows">
       <button class="row" type="button" data-id="attio-workflows" aria-expanded="true" aria-controls="d-attio-workflows">
         <span class="when">Since Feb 2026</span>
-        <span class="main"><span class="name">Attio automations</span><span class="title">A CRM that does its own follow-up</span><span class="summary">29 automations in the company's CRM that do the follow-up work every time a deal moves: announcing wins, setting up renewals, checking records are complete.</span></span>
+        <span class="main"><span class="name">Attio automations</span><span class="title">A CRM that does its own follow-up</span><span class="summary">Automations in the company's CRM that do the follow-up work every time a deal moves: announcing wins, setting up renewals, checking records are complete. 29 built, 13 running today.</span></span>
         <span class="tags"><span class="chip">Sales systems</span></span>
         <span class="status live">Live</span>
         <span class="toggle">Close<svg class="caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M6 1v10M1 6h10" stroke="currentColor" stroke-width="1.6" fill="none"/></svg></span>
@@ -452,7 +452,7 @@ const PROJECTS = [
   },
   {
     id: "attio-workflows", rank: 4, feature: true, name: "Attio automations", title: "A CRM that does its own follow-up", areas: ["systems"], date: "2026-02-11", when: "Since Feb 2026", status: "Live",
-    summary: "29 automations in the company's CRM that do the follow-up work every time a deal moves: announcing wins, setting up renewals, checking records are complete.",
+    summary: "Automations in the company's CRM that do the follow-up work every time a deal moves: announcing wins, setting up renewals, checking records are complete. 29 built, 13 running today.",
     main: [
       { h: "The idea", p: ["A CRM is only as good as what's in it, and keeping it complete normally depends on people remembering extra steps after every deal. I moved those steps into the system itself, so they happen the moment a deal changes."] },
       { h: "The automations running today", table: {
@@ -477,7 +477,7 @@ const PROJECTS = [
   },
   {
     id: "browser-questionnaire", rank: 2, feature: true, name: "Claude in Chrome", title: "Online security portals answered from the same documents", areas: ["security", "deals"], date: "2026-10-06", when: "Oct 2026", status: "Live",
-    summary: "Some customers send their questions through a website instead of a file. A browser assistant reads the portal, checks every answer against my documents and drafts the rest.",
+    summary: "Some customers send their questions through a website instead of a file. A browser assistant works through the portal, answers everything my documents support and hands the rest to me.",
     main: [
       { h: "The problem", p: ["More and more large customers run their security reviews through online portals instead of spreadsheets. That means hundreds of questions, clicked through one page at a time, with no file to hand to the VSQ Assistant."] },
       { h: "How it works", steps: [
