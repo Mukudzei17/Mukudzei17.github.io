@@ -21,29 +21,67 @@
 <style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <script>
 (function () {
-  // Only real, engaged visits count. A tab that reloads in the background (Chrome restoring tabs, a phone
-  // waking an old tab) never scrolls, taps or moves the mouse, so it is never counted and never notifies.
-  var me = false, store = null;
+  // Visit analytics for the public site. Anonymous: no cookies, no identity, nothing sent about who the visitor is.
+  // A visit only counts once the page has been on screen for 4 seconds AND the visitor has interacted, so tabs that
+  // reload in the background (restored tabs, phones waking old tabs) never count.
+  var GC = "mukudzei", TOPIC = "mukudzei-site-ac41e04e01d5";
+  var store = null;
   try { store = window.localStorage; } catch (e) {}
-  try {
-    if (location.hash === "#me") { store.setItem("pf-me", "1"); history.replaceState(null, "", location.pathname); }
-    if (location.hash === "#not-me") { store.removeItem("pf-me"); history.replaceState(null, "", location.pathname); }
-    me = store.getItem("pf-me") === "1";
-  } catch (e) {}
-  window.__track = function () {};
-  if (me) return;
-  var GC = "mukudzei", TOPIC = "mukudzei-site-ac41e04e01d5", queue = [], live = false, gcLoaded = false;
-  var NOTIFY_GAP = 30 * 60 * 1000; // coming back within 30 minutes counts as the same visit
-  function ping(title, body, key) {
-    if (!TOPIC) return;
-    try {
-      var k = "pf-ping-" + key, last = +(store && store.getItem(k)) || 0;
-      if (Date.now() - last < NOTIFY_GAP) return;
-      store && store.setItem(k, String(Date.now()));
-    } catch (e) {}
-    try { fetch("https://ntfy.sh/" + TOPIC, { method: "POST", body: body, headers: { "Title": title, "Tags": "classical_building" } }).catch(function () {}); } catch (e) {}
+  function get(k) { try { return store.getItem(k); } catch (e) { return null; } }
+  function set(k, v) { try { store.setItem(k, v); } catch (e) {} }
+  function del(k) { try { store.removeItem(k); } catch (e) {} }
+
+  // Owner and opt-out switches: /#me or /#opt-out stops counting on this browser, /#not-me or /#opt-in restarts it.
+  function readSwitch() {
+    var h = location.hash;
+    if (h === "#me" || h === "#opt-out") { set("pf-me", "1"); history.replaceState(null, "", location.pathname + location.search); }
+    if (h === "#not-me" || h === "#opt-in") { del("pf-me"); history.replaceState(null, "", location.pathname + location.search); }
   }
-  function send(q) { if (gcLoaded && window.goatcounter && window.goatcounter.count) window.goatcounter.count(q); else queue.push(q); }
+  readSwitch();
+  function off() { return get("pf-me") === "1"; }
+  function showOptState() {
+    var el = document.getElementById("optout");
+    if (!el) return;
+    el.innerHTML = off()
+      ? 'Visit counting is off on this browser. <a href="#opt-in">Turn it back on</a>.'
+      : 'Visits are counted anonymously, with no cookies. A small visit counter is kept in your browser. <a href="#opt-out">Opt out</a>.';
+  }
+  document.addEventListener("DOMContentLoaded", showOptState);
+  addEventListener("hashchange", function () {
+    if (/^#(me|opt-out|not-me|opt-in)$/.test(location.hash)) { readSwitch(); showOptState(); }
+  });
+
+  window.__track = function () {};
+  if (off()) return;
+
+  // Where the visit came from: a per-application link (?src=acme-recruiter) wins, then the referring site.
+  var params = new URLSearchParams(location.search);
+  var src = (params.get("src") || params.get("utm_source") || "").replace(/[^\w.-]/g, "").slice(0, 40);
+  if (src) set("pf-src", src);
+  var firstSrc = get("pf-src") || "";
+  var ref = "a direct link";
+  try { if (document.referrer) { var h = new URL(document.referrer).hostname.replace(/^www\./, ""); if (h && h !== location.hostname) ref = h; } } catch (e) {}
+  var via = src ? "via " + src : (firstSrc ? "via " + firstSrc + " (first link they used)" : "from " + ref);
+  var dev = /Mobi|Android|iPhone/i.test(navigator.userAgent) ? "a phone" : "a computer";
+
+  var GAP = 30 * 60 * 1000; // coming back within 30 minutes is the same visit
+  var live = false, gcLoaded = false, queue = [], early = [];
+  function ping(title, body, key, quiet) {
+    if (!TOPIC || off()) return;
+    var k = "pf-ping-" + key, last = +get(k) || 0;
+    if (key && Date.now() - last < GAP) return;
+    if (key) set(k, String(Date.now()));
+    var url = "https://ntfy.sh/" + TOPIC + "?title=" + encodeURIComponent(title) + "&tags=classical_building" + (quiet ? "&priority=2" : "");
+    try {
+      if (quiet && navigator.sendBeacon) navigator.sendBeacon(url, body);
+      else fetch(url, { method: "POST", body: body, keepalive: true }).catch(function () {});
+    } catch (e) {}
+  }
+  function send(q) {
+    if (off()) return;
+    if (gcLoaded && window.goatcounter && window.goatcounter.count) window.goatcounter.count(q); else queue.push(q);
+  }
+  function event(path, title) { send({ path: path, title: title || path, event: true }); }
   function loadGC() {
     if (!GC || gcLoaded) return;
     window.goatcounter = { no_onload: true };
@@ -52,43 +90,98 @@
     s.onload = function () { gcLoaded = true; queue.splice(0).forEach(function (q) { window.goatcounter.count(q); }); };
     document.head.appendChild(s);
   }
-  var early = [];
-  window.__track = function (name, title) { var q = { path: name, title: title, event: true }; if (live) send(q); else early.push(q); if (name === "linkedin") ping("Portfolio visitor clicked your LinkedIn", "They found the contact link.", "linkedin"); };
-  function goLive() {
-    if (live) return; live = true;
-    loadGC();
-    send({ path: location.pathname || "/", title: document.title });
-    early.splice(0).forEach(send);
-    var ref = "a direct link";
-    try { if (document.referrer) { var h = new URL(document.referrer).hostname.replace(/^www\./, ""); if (h && h !== location.hostname) ref = h; } } catch (e) {}
-    var dev = /Mobi|Android|iPhone/i.test(navigator.userAgent) ? "a phone" : "a computer";
-    // This device's own visit count, kept only on the visitor's device (nothing personal is stored or sent).
-    var n = 1, first = Date.now(), lastVisit = 0;
-    try {
-      lastVisit = +store.getItem("pf-last-visit") || 0;
-      n = +store.getItem("pf-visits") || 0;
-      first = +store.getItem("pf-first") || Date.now();
-      if (Date.now() - lastVisit > NOTIFY_GAP) n += 1;
-      n = Math.max(n, 1);
-      store.setItem("pf-visits", String(n)); store.setItem("pf-first", String(first)); store.setItem("pf-last-visit", String(Date.now()));
-    } catch (e) {}
-    var ord = function (k) { var t = k % 100; return k + ((t > 10 && t < 14) ? "th" : ({ 1: "st", 2: "nd", 3: "rd" }[k % 10] || "th")); };
-    var ago = function (ms) { var m = Math.round(ms / 60000), h = Math.round(m / 60), d = Math.round(h / 24);
-      return m < 60 ? m + " minutes ago" : h < 24 ? h + (h === 1 ? " hour ago" : " hours ago") : d + (d === 1 ? " day ago" : " days ago"); };
-    if (n <= 1) ping("Someone is reading your portfolio", "From " + ref + ", on " + dev + ".", "visit");
-    else ping("A returning visitor is back, " + ord(n) + " visit", "From " + ref + ", on " + dev + ". First came " + ago(Date.now() - first) + ".", "visit");
-  }
-  // Live = page visible for 4 seconds AND the visitor has scrolled, tapped, clicked, moved the mouse or pressed a key.
-  var visibleFor = 0, interacted = false, timer = null;
-  function tick() {
-    if (document.visibilityState !== "visible") return;
-    visibleFor += 1;
-    if (visibleFor >= 4 && interacted) { clearInterval(timer); goLive(); }
-  }
-  ["scroll", "pointerdown", "keydown", "touchstart", "mousemove", "wheel"].forEach(function (ev) {
-    addEventListener(ev, function () { interacted = true; }, { passive: true, once: true });
+
+  // What happened during the visit, for the summary sent when they leave.
+  var visit = { opened: {}, order: [], shots: 0, linkedin: false, phone: false, copied: 0, maxScroll: 0, read: 0 };
+  var openSince = {};
+  function buildName(t) { return (t || "").replace(/^Close /, "").replace(/ ×$/, ""); }
+  window.__track = function (name, title) {
+    var q = { path: name, title: title || name, event: true };
+    if (live) send(q); else early.push(q);
+    var m = /^open\/(.+)$/.exec(name);
+    if (m) { if (!visit.opened[m[1]]) { visit.opened[m[1]] = { name: title || m[1], secs: 0 }; visit.order.push(m[1]); } openSince[m[1]] = Date.now(); }
+    m = /^close\/(.+)$/.exec(name);
+    if (m && openSince[m[1]]) { visit.opened[m[1]].secs += (Date.now() - openSince[m[1]]) / 1000; delete openSince[m[1]]; }
+    if (/^screenshot\//.test(name)) visit.shots++;
+    if (name === "linkedin") { visit.linkedin = true; ping("Portfolio visitor clicked your LinkedIn", "Visitor " + via + ", on " + dev + ".", "linkedin"); }
+  };
+
+  // Phone number: taps on the link and copies of the number.
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest('a[href^="tel:"]');
+    if (a) { visit.phone = true; window.__track("phone/tapped", "Tapped the phone number"); ping("Portfolio visitor tapped your phone number", "Visitor " + via + ", on " + dev + ". They may be about to call.", "phone"); }
   });
-  timer = setInterval(tick, 1000);
+  document.addEventListener("copy", function () {
+    var t = String(window.getSelection ? window.getSelection() : "").replace(/\s+/g, " ").trim();
+    if (!t) return;
+    visit.copied++;
+    if (/7759\s?704\s?804/.test(t.replace(/[^\d ]/g, ""))) {
+      visit.phone = true; window.__track("phone/copied", "Copied the phone number");
+      ping("Portfolio visitor copied your phone number", "Visitor " + via + ", on " + dev + ".", "phone");
+    } else window.__track("copied", "Copied: " + t.slice(0, 80));
+  });
+
+  // Scroll depth, in steps of 25%.
+  var marks = {};
+  addEventListener("scroll", function () {
+    var d = document.documentElement, pct = Math.round(100 * (scrollY + innerHeight) / Math.max(d.scrollHeight, 1));
+    if (pct > visit.maxScroll) visit.maxScroll = Math.min(pct, 100);
+    [25, 50, 75, 100].forEach(function (p) { if (pct >= p - 1 && !marks[p]) { marks[p] = 1; window.__track("scroll/" + p, "Scrolled " + p + "%"); } });
+  }, { passive: true });
+
+  // Reading time: seconds the page is on screen with the visitor active in the last 30 seconds.
+  var lastActive = 0, visibleFor = 0, interacted = false;
+  ["scroll", "pointerdown", "keydown", "touchstart", "mousemove", "wheel"].forEach(function (ev) {
+    addEventListener(ev, function () { interacted = true; lastActive = Date.now(); }, { passive: true });
+  });
+  setInterval(function () {
+    if (document.visibilityState !== "visible") return;
+    visibleFor++;
+    if (live && Date.now() - lastActive < 30000) visit.read++;
+    if (!live && visibleFor >= 4 && interacted) goLive();
+  }, 1000);
+
+  function ord(k) { var t = k % 100; return k + ((t > 10 && t < 14) ? "th" : ({ 1: "st", 2: "nd", 3: "rd" }[k % 10] || "th")); }
+  function ago(ms) { var m = Math.round(ms / 60000), h = Math.round(m / 60), d = Math.round(h / 24);
+    return m < 60 ? m + " minutes ago" : h < 24 ? h + (h === 1 ? " hour ago" : " hours ago") : d + (d === 1 ? " day ago" : " days ago"); }
+  function dur(s) { s = Math.round(s); return s < 60 ? s + " sec" : Math.round(s / 60) + " min"; }
+
+  var visitNo = 1;
+  function goLive() {
+    if (live || off()) return;
+    live = true;
+    loadGC();
+    send({ path: location.pathname || "/", title: document.title, referrer: src ? "src:" + src : document.referrer });
+    if (src) event("src/" + src, "Arrived via link: " + src);
+    early.splice(0).forEach(send);
+    var n = +get("pf-visits") || 0, first = +get("pf-first") || Date.now(), lastVisit = +get("pf-last-visit") || 0;
+    if (Date.now() - lastVisit > GAP) n += 1;
+    n = Math.max(n, 1); visitNo = n;
+    set("pf-visits", String(n)); set("pf-first", String(first)); set("pf-last-visit", String(Date.now()));
+    if (n <= 1) ping("Someone is reading your portfolio", "Visitor " + via + ", on " + dev + ".", "visit");
+    else ping("A returning visitor is back, " + ord(n) + " visit", "Visitor " + via + ", on " + dev + ". First came " + ago(Date.now() - first) + ".", "visit");
+  }
+
+  // When they leave (or switch away), send one quiet summary of the visit.
+  var summarised = false;
+  function summary() {
+    if (!live || summarised || visit.read < 10 || off()) return;
+    summarised = true;
+    Object.keys(openSince).forEach(function (id) { visit.opened[id].secs += (Date.now() - openSince[id]) / 1000; openSince[id] = Date.now(); });
+    var parts = ["Read for " + dur(visit.read)];
+    if (visit.order.length) parts.push("opened " + visit.order.map(function (id) { var o = visit.opened[id]; return buildName(o.name) + (o.secs >= 5 ? " (" + dur(o.secs) + ")" : ""); }).join(", "));
+    else parts.push("didn't open a build");
+    if (visit.shots) parts.push("enlarged " + visit.shots + " screenshot" + (visit.shots > 1 ? "s" : ""));
+    parts.push("scrolled " + visit.maxScroll + "%");
+    if (visit.linkedin) parts.push("clicked LinkedIn");
+    if (visit.phone) parts.push("took your phone number");
+    if (visit.copied && !visit.phone) parts.push("copied text " + visit.copied + "x");
+    event("read-time/" + (visit.read < 60 ? "under-1-min" : visit.read < 180 ? "1-3-min" : visit.read < 600 ? "3-10-min" : "over-10-min"), "Read for " + dur(visit.read));
+    visit.order.forEach(function (id) { var s = visit.opened[id].secs; event("build-time/" + id, buildName(visit.opened[id].name) + ": " + dur(s)); });
+    ping("Visit summary (" + ord(visitNo) + " visit)", parts.join(" · ") + ". Visitor " + via + ", on " + dev + ".", "", true);
+  }
+  document.addEventListener("visibilitychange", function () { if (document.visibilityState === "hidden") summary(); });
+  addEventListener("pagehide", summary);
 })();
 </script>
 </head>
@@ -330,7 +423,7 @@ dialog button { font: 500 14px var(--body); background: none; color: #ece6da; bo
       <dt>Based</dt><dd>Edinburgh</dd>
       <dt>Works across</dt><dd>Sales, Legal, Security and Finance</dd>
       <dt>Builds with</dt><dd>Wordsmith, Attio, Claude, Slack</dd>
-      <dt>Contact</dt><dd><a href="https://www.linkedin.com/in/mukudzei-chauruka-106ab4219/">LinkedIn</a> · <span class="phone">+44 7759 704804</span></dd>
+      <dt>Contact</dt><dd><a href="https://www.linkedin.com/in/mukudzei-chauruka-106ab4219/">LinkedIn</a> · <a class="phone" href="tel:+447759704804">+44 7759 704804</a></dd>
     </dl>
   </header>
 
@@ -449,7 +542,7 @@ dialog button { font: 500 14px var(--body); background: none; color: #ece6da; bo
   </section>
 
   <div class="foot" id="page-end">
-    <span>Figures come from the tools' own records and are dated. Customer and colleague details in screenshots are hidden. Visits are counted anonymously, without cookies.</span>
+    <span>Figures come from the tools' own records and are dated. Customer and colleague details in screenshots are hidden. <span id="optout">Visits are counted anonymously, with no cookies. A small visit counter is kept in your browser. <a href="#opt-out">Opt out</a>.</span></span>
     <span>Updated 6 October 2026 · <a href="https://www.linkedin.com/in/mukudzei-chauruka-106ab4219/">LinkedIn</a></span>
   </div>
 </div>
